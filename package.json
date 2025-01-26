@@ -1,0 +1,47 @@
+{
+  "name": "solid-nextjs",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.3.0",
+    "@types/bcrypt": "^5.0.1",
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.32",
+    "@types/react-dom": "^18.2.14",
+    "autoprefixer": "^10.4.16",
+    "axios": "^1.7.8",
+    "clsx": "^2.1.1",
+    "cookie": "^1.0.2",
+    "dayjs": "^1.11.13",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
+    "framer-motion": "^10.12.16",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.462.0",
+    "next": "15.0.3",
+    "next-themes": "^0.2.1",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-redux": "^9.1.2",
+    "socket.io-client": "^4.8.1",
+    "solid-nextjs": "file:",
+    "swiper": "^9.3.2",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6"
+  }
+}

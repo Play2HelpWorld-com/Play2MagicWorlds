@@ -1,0 +1,313 @@
+<script>
+    // Game variables
+let inGameCurrency = 0;
+let adDisplayed = false;
+let adsEnabled = true;
+let highScores = []; // Store high scores
+let returningUsers = 800; // Number of returning users
+let newUsers = 500; // Number of new users
+let RegUsers = 2100; // Number of new users
+let worldScore = 10000; // World score
+let gameLoopRunning = true; // Control the game loop
+
+// Function to display ads
+function displayAds() {
+  if (adsEnabled && !adDisplayed) {
+    console.log('Displaying ad...');
+    adDisplayed = true;
+  }
+}
+
+// Function to toggle ads
+function toggleAds() {
+  adsEnabled = !adsEnabled;
+  console.log(Ads enabled: ${adsEnabled});
+  const adButton = document.getElementById('ad-button');
+  adButton.textContent = adsEnabled ? 'Disable Ads' : 'Enable Ads';
+  if (!adsEnabled) {
+    gameLoopRunning = false;
+  } else {
+    gameLoopRunning = true;
+  }
+}
+
+// Function to earn in-game currency
+function earnCurrency(amount) {
+  inGameCurrency += amount;
+  console.log(Earning currency: ${amount}. Total: ${inGameCurrency});
+  const inGameCurrencySpan = document.getElementById('in-game-currency');
+  inGameCurrencySpan.textContent = $${inGameCurrency};
+}
+
+// Function to generate a random username
+function generateUsername() {
+  return Player ${Math.floor(Math.random() * 1000)};
+}
+
+// Function to update high scores
+function updateHighScores(score) {
+  highScores.push({
+    username: generateUsername(),
+    score: score
+  });
+  highScores.sort((a, b) => b.score - a.score);
+  highScores = highScores.slice(0, 5); // Keep only the top 5 scores
+  console.log('Updated high scores:', highScores);
+  const highScoresList = document.getElementById('high-scores-list');
+  highScoresList.innerHTML = '';
+  highScores.forEach((highScore, index) => {
+    const highScoreRow = document.createElement('tr');
+    const highScoreRank = document.createElement('td');
+    highScoreRank.textContent = ${index + 1};
+    highScoreRow.appendChild(highScoreRank);
+    const highScoreAvatarCell = document.createElement('td');
+    const highScoreAvatar = document.createElement('div');
+    highScoreAvatar.classList.add('high-score-avatar');
+    highScoreAvatarCell.appendChild(highScoreAvatar);
+    highScoreRow.appendChild(highScoreAvatarCell);
+    const highScoreUsername = document.createElement('td');
+    highScoreUsername.textContent = highScore.username;
+    highScoreRow.appendChild(highScoreUsername);
+    const highScoreScore = document.createElement('td');
+    highScoreScore.textContent = highScore.score;
+    highScoreRow.appendChild(highScoreScore);
+    highScoresList.appendChild(highScoreRow);
+  });
+}
+
+// Function to increment returning users
+function incrementReturningUsers() {
+  returningUsers += Math.floor(Math.random() * 100);
+  console.log(Returning users: ${returningUsers});
+  const returningUsersSpan = document.getElementById('returning-users');
+  returningUsersSpan.textContent = returningUsers;
+}
+
+// Function to increment new users
+function incrementNewUsers() {
+  newUsers += Math.floor(Math.random() * 50);
+  console.log(New users: ${newUsers});
+  const newUsersSpan = document.getElementById('new-users');
+  newUsersSpan.textContent = newUsers;
+}
+
+// Function to increment Register users
+// Function to increment Register users
+function incrementRegUsers() {
+  RegUsers += Math.floor(Math.random() * 50);
+  console.log(Registered users: ${RegUsers});
+const RegUsersSpan = document.getElementById('total-users');
+RegUsersSpan.textContent = RegUsers;
+}
+
+
+// Function to update world score
+function updateWorldScore(score) {
+  worldScore += score;
+  console.log(World score: ${worldScore});
+  const worldScoreSpan = document.getElementById('world-score');
+  worldScoreSpan.textContent = worldScore;
+}
+
+// Main game loop
+setInterval(() => {
+  if (gameLoopRunning) {
+    // Simulate earning currency
+    if (Math.random() < 0.1) {
+      earnCurrency(Math.floor(Math.random() * 1000));
+    }
+
+    // Simulate high scores
+    if (Math.random() < 0.1) {
+      updateHighScores(Math.floor(Math.random() * 10000));
+    }
+
+    // Simulate returning users
+    if (Math.random() < 0.1) {
+      incrementReturningUsers();
+    }
+
+    // Simulate new users
+    if (Math.random() < 0.1) {
+      incrementNewUsers();
+    }
+
+    // Simulate Registerd users
+    if (Math.random() < 0.1) {
+      incrementRegUsers();
+    }
+    // Simulate world score
+    if (Math.random() < 0.1) {
+      updateWorldScore(Math.floor(Math.random() * 1000));
+    }
+  }
+}, 100);
+
+// Handle ad button click
+const adButton = document.getElementById('ad-button');
+adButton.addEventListener('click', toggleAds);
+
+// Initialize game state
+earnCurrency(1000);
+updateHighScores(5000);
+incrementReturningUsers();
+incrementNewUsers();
+incrementRegUsers();
+updateWorldScore(500);
+  </script>  <script>
+    // Game variables
+let inGameCurrency = 0;
+let adDisplayed = false;
+let adsEnabled = true;
+let highScores = []; // Store high scores
+let returningUsers = 800; // Number of returning users
+let newUsers = 500; // Number of new users
+let RegUsers = 2100; // Number of new users
+let worldScore = 10000; // World score
+let gameLoopRunning = true; // Control the game loop
+
+// Function to display ads
+function displayAds() {
+  if (adsEnabled && !adDisplayed) {
+    console.log('Displaying ad...');
+    adDisplayed = true;
+  }
+}
+
+// Function to toggle ads
+function toggleAds() {
+  adsEnabled = !adsEnabled;
+  console.log(Ads enabled: ${adsEnabled});
+  const adButton = document.getElementById('ad-button');
+  adButton.textContent = adsEnabled ? 'Disable Ads' : 'Enable Ads';
+  if (!adsEnabled) {
+    gameLoopRunning = false;
+  } else {
+    gameLoopRunning = true;
+  }
+}
+
+// Function to earn in-game currency
+function earnCurrency(amount) {
+  inGameCurrency += amount;
+  console.log(Earning currency: ${amount}. Total: ${inGameCurrency});
+  const inGameCurrencySpan = document.getElementById('in-game-currency');
+  inGameCurrencySpan.textContent = $${inGameCurrency};
+}
+
+// Function to generate a random username
+function generateUsername() {
+  return Player ${Math.floor(Math.random() * 1000)};
+}
+
+// Function to update high scores
+function updateHighScores(score) {
+  highScores.push({
+    username: generateUsername(),
+    score: score
+  });
+  highScores.sort((a, b) => b.score - a.score);
+  highScores = highScores.slice(0, 5); // Keep only the top 5 scores
+  console.log('Updated high scores:', highScores);
+  const highScoresList = document.getElementById('high-scores-list');
+  highScoresList.innerHTML = '';
+  highScores.forEach((highScore, index) => {
+    const highScoreRow = document.createElement('tr');
+    const highScoreRank = document.createElement('td');
+    highScoreRank.textContent = ${index + 1};
+    highScoreRow.appendChild(highScoreRank);
+    const highScoreAvatarCell = document.createElement('td');
+    const highScoreAvatar = document.createElement('div');
+    highScoreAvatar.classList.add('high-score-avatar');
+    highScoreAvatarCell.appendChild(highScoreAvatar);
+    highScoreRow.appendChild(highScoreAvatarCell);
+    const highScoreUsername = document.createElement('td');
+    highScoreUsername.textContent = highScore.username;
+    highScoreRow.appendChild(highScoreUsername);
+    const highScoreScore = document.createElement('td');
+    highScoreScore.textContent = highScore.score;
+    highScoreRow.appendChild(highScoreScore);
+    highScoresList.appendChild(highScoreRow);
+  });
+}
+
+// Function to increment returning users
+function incrementReturningUsers() {
+  returningUsers += Math.floor(Math.random() * 100);
+  console.log(Returning users: ${returningUsers});
+  const returningUsersSpan = document.getElementById('returning-users');
+  returningUsersSpan.textContent = returningUsers;
+}
+
+// Function to increment new users
+function incrementNewUsers() {
+  newUsers += Math.floor(Math.random() * 50);
+  console.log(New users: ${newUsers});
+  const newUsersSpan = document.getElementById('new-users');
+  newUsersSpan.textContent = newUsers;
+}
+
+// Function to increment Register users
+// Function to increment Register users
+function incrementRegUsers() {
+  RegUsers += Math.floor(Math.random() * 50);
+  console.log(Registered users: ${RegUsers});
+const RegUsersSpan = document.getElementById('total-users');
+RegUsersSpan.textContent = RegUsers;
+}
+
+
+// Function to update world score
+function updateWorldScore(score) {
+  worldScore += score;
+  console.log(World score: ${worldScore});
+  const worldScoreSpan = document.getElementById('world-score');
+  worldScoreSpan.textContent = worldScore;
+}
+
+// Main game loop
+setInterval(() => {
+  if (gameLoopRunning) {
+    // Simulate earning currency
+    if (Math.random() < 0.1) {
+      earnCurrency(Math.floor(Math.random() * 1000));
+    }
+
+    // Simulate high scores
+    if (Math.random() < 0.1) {
+      updateHighScores(Math.floor(Math.random() * 10000));
+    }
+
+    // Simulate returning users
+    if (Math.random() < 0.1) {
+      incrementReturningUsers();
+    }
+
+    // Simulate new users
+    if (Math.random() < 0.1) {
+      incrementNewUsers();
+    }
+
+    // Simulate Registerd users
+    if (Math.random() < 0.1) {
+      incrementRegUsers();
+    }
+    // Simulate world score
+    if (Math.random() < 0.1) {
+      updateWorldScore(Math.floor(Math.random() * 1000));
+    }
+  }
+}, 100);
+
+// Handle ad button click
+const adButton = document.getElementById('ad-button');
+adButton.addEventListener('click', toggleAds);
+
+// Initialize game state
+earnCurrency(1000);
+updateHighScores(5000);
+incrementReturningUsers();
+incrementNewUsers();
+incrementRegUsers();
+updateWorldScore(500);
+  </script>
