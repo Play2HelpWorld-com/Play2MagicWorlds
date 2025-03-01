@@ -209,9 +209,9 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-4 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-5xl font-extrabold leading-tight tracking-tighter text-transparent sm:text-6xl lg:text-7xl"
             >
-              MAGICAL
+              MAGIC
               <span className="text-neon-blue drop-shadow-glow block">
-                WORLD
+                WORLDS
               </span>
             </motion.h1>
 
@@ -269,7 +269,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
                 className="rounded-full border-2 border-purple-500 bg-transparent px-8 py-4 font-bold text-white transition-all duration-300 hover:bg-purple-900/30"
               >
-                EXPLORE GAMES
+                EXPLORE WORLDS
               </motion.button>
             </motion.div>
 
@@ -286,7 +286,7 @@ const Hero = () => {
                     className="h-8 w-8 overflow-hidden rounded-full border-2 border-purple-800"
                   >
                     <Image
-                      src={`/images/avatar/user${i}.png`}
+                      src={`/images/user/user-0${i}.png`}
                       alt={`User ${i}`}
                       width={32}
                       height={32}
@@ -434,7 +434,7 @@ const Hero = () => {
 
                         <div className="mt-5">
                           <div className="mb-1 flex justify-between text-xs">
-                            <span className="text-red-400">PROGRESS</span>
+                            <span className="text-red-400">ACHIEVEMENTS</span>
                             <span className="text-red-400">
                               {gameCharacters[activeCharacter].progress}/100
                             </span>
@@ -578,7 +578,7 @@ const Hero = () => {
           initial={{ opacity: 0, x: -100, y: 50 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.8, delay: 1.4 }}
-          className="absolute bottom-10 left-10 z-20 hidden lg:block"
+          className="absolute bottom-4 left-10 z-20 hidden lg:block"
         >
           <div className="rounded-lg bg-black/40 px-4 py-2 backdrop-blur-sm">
             <p className="text-sm text-gray-300">Global Players</p>

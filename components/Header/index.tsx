@@ -81,7 +81,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full bg-white py-0.5 transition-transform duration-300 dark:bg-black ${
+      className={`fixed left-0 top-0 z-50 w-full bg-white/10 py-0.5 transition-transform duration-300 dark:bg-black ${
         hideOnScroll ? "-translate-y-full" : "translate-y-0"
       } ${stickyMenu ? "shadow" : ""}`}
     >
