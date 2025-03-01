@@ -13,8 +13,11 @@ const Header = () => {
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string>();
+  const [hideOnScroll, setHideOnScroll] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const pathUrl = usePathname();
+
   interface MenuItem {
     id: number;
     title: string;
@@ -34,24 +37,53 @@ const Header = () => {
       setNavigationOpen(!navigationOpen);
     }
   };
-  // Sticky menu
+
+  // Handle sticky menu
   const handleStickyMenu = () => {
     if (window.scrollY >= 80) {
       setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
     }
   };
 
+  // Handle sticky menu and hide on scroll
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+      setHideOnScroll(true);
+    } else {
+      setHideOnScroll(false);
+    }
+
+    setLastScrollY(currentScrollY);
+    setStickyMenu(currentScrollY >= 80);
+  };
+
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-  });
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      setHideOnScroll(currentScrollY > lastScrollY && currentScrollY > 80);
+      setLastScrollY(currentScrollY);
+      setStickyMenu(currentScrollY >= 80);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, [lastScrollY]);
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full bg-white py-0.5 dark:bg-black ${
-        stickyMenu ? "!py-0.5 shadow transition duration-100" : ""
-      }`}
+      className={`fixed left-0 top-0 z-50 w-full bg-white py-0.5 transition-transform duration-300 dark:bg-black ${
+        hideOnScroll ? "-translate-y-full" : "translate-y-0"
+      } ${stickyMenu ? "shadow" : ""}`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-[12%]">
@@ -191,7 +223,5 @@ const Header = () => {
     </header>
   );
 };
-
-// w-full delay-300
 
 export default Header;
