@@ -13,7 +13,7 @@ const Blog = async () => {
             headerInfo={{
               title: `NEWS & BLOGS`,
               subtitle: `Latest News & Blogs`,
-              description: `Play2MagicWorld offers a wide variety of games that cater to all interests and skill levels. Players can immerse themselves in thrilling adventures, puzzles, strategy games, and more. As you play and achieve milestones, you earn coins that can be used`,
+              description: `Games with magic Worlds offers a wide variety of games that cater to all interests and skill levels. Players can immerse themselves in thrilling adventures, puzzles, strategy games, and more. As you play and achieve milestones, you earn coins that can be used`,
             }}
           />
         </div>

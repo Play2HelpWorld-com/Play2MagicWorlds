@@ -1,18 +1,20 @@
 "use client";
 import Image from "next/image";
+import { Video } from "lucide-react";
 import Spotlight from "@/components/Games/spotlight";
 import GameData from "@/components/Games/gameData";
 import { GameInterface } from "@/types/game";
 
 export default function Game() {
-
   const HandleLinkClick = async (game: GameInterface): Promise<void> => {
-    const accessToken = localStorage.getItem('accessToken');
+    const accessToken = localStorage.getItem("accessToken");
     if (!accessToken) {
-      alert('You are not logged in. Your score will not be saved. Please login to save your score.');
+      alert(
+        "You are not logged in. Your score will not be saved. Please login to save your score.",
+      );
     }
-    const playLinkWithSession = `${game.playLink}?to=${encodeURIComponent(accessToken || '')}`;
-    window.open(playLinkWithSession, '_blank');
+    const playLinkWithSession = `${game.playLink}?to=${encodeURIComponent(accessToken || "")}`;
+    window.open(playLinkWithSession, "_blank");
   };
 
   return (
@@ -65,13 +67,30 @@ export default function Game() {
                   </a>
 
                   {/* Image */}
-                  <Image
-                    className="inline-flex"
-                    src={game.image}
-                    width={350}
-                    height={288}
-                    alt={game.alt}
-                  />
+                  {/* Video */}
+                  {game.video ? (
+                    <video
+                      width="350"
+                      height="288"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-lg"
+                    >
+                      <source src={game.video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <Image
+                      className="inline-flex"
+                      src={game.image}
+                      width={350}
+                      height={288}
+                      alt={game.alt}
+                    />
+                  )}
+
                   {/* Content */}
                   <div className="p-6">
                     <span className="bg-gradient-to-r from-indigo-500 to-indigo-200 bg-clip-text text-transparent">

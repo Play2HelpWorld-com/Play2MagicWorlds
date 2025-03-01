@@ -1,4 +1,5 @@
 import { Game } from "@/types/game";
+import { Video } from "lucide-react";
 
 const GameData: Game[] = [
   {
@@ -6,9 +7,10 @@ const GameData: Game[] = [
     title: "UP!",
     description:
       "Streamline the product development flow with a content platform that's aligned across specs and insights.",
-    image: "/images/games/UP_Summer.webp",
+    video: "public/images/game/learning.mp4", // Ensure this file is inside /public/videos/
     alt: "Workflow 01",
     buttonText: "Play Now",
+ 
     playLink: `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/tetrixGame/`,
   },
   {
