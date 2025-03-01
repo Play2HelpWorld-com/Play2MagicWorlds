@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Blog Details Page - Solid SaaS Boilerplate",
-  description: "This is Blog details page for Solid Pro",
+  title: "Blog Details Page ",
+  description: "This is Blog details page for magic Worlds",
   // other metadata
 };
 
@@ -111,11 +111,11 @@ const SingleBlogPage = async () => {
 
                 <div className="blog-details">
                   <p>
-                  Welcome to Play2MagicWorld, an innovative platform where gaming meets social impact. Designed to bring entertainment and purpose together, Play2MusicWorld allows users to play exciting games, earn coins, and contribute to meaningful social causes.
+                  Welcome to Games with magic Worlds, an innovative platform where gaming meets social impact. Designed to bring entertainment and purpose together, Play2MusicWorld allows users to play exciting games, earn coins, and contribute to meaningful social causes.
                   </p>
 
                   <p>
-                  Play2MagicWorld offers a wide variety of games that cater to all interests and skill levels. Players can immerse themselves in thrilling adventures, puzzles, strategy games, and more. As you play and achieve milestones, you earn coins that can be used in multiple ways.
+                  Games with magic Worlds offers a wide variety of games that cater to all interests and skill levels. Players can immerse themselves in thrilling adventures, puzzles, strategy games, and more. As you play and achieve milestones, you earn coins that can be used in multiple ways.
                   </p>
 
                   <div className="flex flex-wrap gap-5">
@@ -134,11 +134,11 @@ const SingleBlogPage = async () => {
                   </div>
 
                   <h3 className="pt-8">
-                  Play2MagicWorld offers a wide variety of games
+                  Games with magic Worlds offers a wide variety of games
                   </h3>
 
                   <p>
-                  Play2MagicWorld offers a wide variety of games that cater to all interests and skill levels. Players can immerse themselves in thrilling adventures, puzzles, strategy games, and more. As you play and achieve milestones, you earn coins that can be used in multiple ways
+                  Games with magic Worlds offers a wide variety of games that cater to all interests and skill levels. Players can immerse themselves in thrilling adventures, puzzles, strategy games, and more. As you play and achieve milestones, you earn coins that can be used in multiple ways
                   </p>
                 </div>
 

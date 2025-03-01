@@ -15,7 +15,7 @@ import Testimonial from "@/components/Testimonial";
 import GameSection from "@/components/Games/gameSection";
 
 export const metadata: Metadata = {
-  title: "Play2magicWorld | Play for Free Donation",
+  title: "Games with magic Worlds | Play for Free Donation",
   description: "This is built by MagicWorld",
   // other metadata
 };

@@ -5,4 +5,5 @@ interface GameInterface {
   alt: string;
   title: string;
   buttonText: string;
+  video?: string;
 }
