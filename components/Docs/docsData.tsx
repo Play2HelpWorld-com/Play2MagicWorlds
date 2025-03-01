@@ -5,7 +5,7 @@ export const docsData = {
     content:
       " Games with magic Worlds is your ultimate destination for fun, rewards, and making a positive impact. Whether you're here to play games, earn rewards, or contribute to charitable causes, Games with magic Worlds has something for everyone. Dive in and explore the exciting opportunities that await you!",
   },
-  "what-is-Games with magic Worlds": {
+  "what-is-games-with-magic-world": {
     title: "What Is Games with magic Worlds?",
     content:
       "Games with magic Worlds is a fab new place online where you can play fun, free games, via almost any device you choose. On top of that you can claim rewards for yourself and Rgrab other benefits too. On Play2WorkWorld.com it's all about the work and the $$$ you earn this for yourself. On Play2HelpWorld.com you can donate your rewards and $$$ to major charities. On Play2HealthWorld.com you grab rewards and also get help with your healthy lifestyle. On Play2LearnWorld.com you are earning and learning. And on Play2LiveWellWorld.com grab your rewards while improving your lived environment. The more you play the more rewards you earn - it's super simple, fun and always free!",

@@ -9,7 +9,7 @@ const SidebarLink = ({ activeSection, setActiveSection }: SidebarLinkProps) => {
   // Links data
   const links = [
     { label: "Introduction", section: "introduction" },
-    { label: "What Is Play2World?", section: "what-is-play2world" },
+    { label: "What Is MagicWorld?", section: "what-is-games-with-magic-world" },
     { label: "How Do Rewards Work?", section: "how-rewards-work" },
     { label: "Why Do We Do This?", section: "why-do-we-do-this" },
   ];

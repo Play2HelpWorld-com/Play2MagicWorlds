@@ -5,20 +5,34 @@ const menuData: Menu[] = [
     id: 1,
     title: "Play",
     newTab: false,
-    path: "/games",
-  },
-  {
-    id: 3,
-    title: "Charities",
-    newTab: false,
     path: "/blog",
   },
   {
-    id: 4,
-    title: "Why Us",
+    id: 3,
+    title: "Worlds",
     newTab: false,
-    path: "/docs",
+    path: "/games",
   },
+
+  // {
+  //   id: 6,
+  //   title: "Score",
+  //   newTab: false,
+  //   submenu: [
+  //     {
+  //       id: 61,
+  //       title: "Leaderboard",
+  //       newTab: false,
+  //       path: "/leaderboard",
+  //     },
+  //     {
+  //       id: 64,
+  //       title: "Your Score",
+  //       newTab: false,
+  //       path: "/yourScore",
+  //     },
+  //   ],
+  // },
   {
     id: 5,
     title: "Join Us",
@@ -38,25 +52,11 @@ const menuData: Menu[] = [
       },
     ],
   },
-
   {
-    id: 6,
-    title: "Score",
+    id: 4,
+    title: "About",
     newTab: false,
-    submenu: [
-      {
-        id: 61,
-        title: "Leaderboard",
-        newTab: false,
-        path: "/leaderboard",
-      },
-      {
-        id: 64,
-        title: "Your Score",
-        newTab: false,
-        path: "/yourScore",
-      },
-    ],
+    path: "/docs",
   },
 ];
 
