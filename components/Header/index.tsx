@@ -54,21 +54,21 @@ const Header = () => {
       }`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
-        <div className="flex w-full items-center justify-between xl:w-1/4">
+        <div className="flex w-full items-center justify-between xl:w-[12%]">
           <a href="/" title="Home">
             <Image
               src="/images/logo/logo.png"
               alt="logo"
               width={200}
               height={50}
-              className="hidden h-18 w-28 dark:block"
+              className="hidden h-18 w-24 dark:block"
             />
             <Image
               src="/images/logo/logo.png"
               alt="logo"
               width={200}
               height={50}
-              className="h-18 w-28 dark:hidden"
+              className="h-18 w-24 dark:hidden"
             />
           </a>
 
