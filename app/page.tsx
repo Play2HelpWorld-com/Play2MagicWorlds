@@ -32,11 +32,11 @@ export default function Home() {
       <FunFact />
       <Integration />
       <CTA />
-      <FAQ />
       <Testimonial />
+      <FAQ />
       {/* <Pricing /> */}
-      <Contact />
-      <Blog />
+      {/* <Contact /> */}
+      {/* <Blog /> */}
     </main>
   );
 }
