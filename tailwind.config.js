@@ -26,7 +26,7 @@ module.exports = {
         titlebgdark: "#46495A",
         btndark: "#292E45",
         white: "#FFFFFF",
-        black: "rgba(0, 0, 0, 0.50)",
+        black: "rgba(0, 0, 0, 0.10)",
         // black: "#0B0F20",
         blackho: "#2C3149",
         blacksection: "#1C2136",
