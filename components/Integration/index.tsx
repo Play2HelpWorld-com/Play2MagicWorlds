@@ -11,9 +11,9 @@ const Integration = () => {
           {/* <!-- Section Title Start --> */}
           <SectionHeader
             headerInfo={{
-              title: `Play Anywhere, Anytime`,
-              subtitle: `Remotely play games with your friends and family`,
-              description: `Play games from your desktop, laptop, or mobile device. Play2Work is a free gaming platform that allows you to play games for free and donate to charity. Play games and help people in need.`,
+              title: `CROSS-PLATFORM GAMING UNIVERSE`,
+              subtitle: `Connect & Play Across Every Device`,
+              description: `Jump into action seamlessly across all your devices. Whether you're grinding XP on your desktop, quick-matching on mobile, or exploring virtual worlds in VR—your gaming adventure follows you everywhere. Play2Work's cross-platform technology ensures your progress, friends, and achievements stay synchronized in real-time.`,
             }}
           />
 
@@ -61,7 +61,7 @@ const Integration = () => {
                 <Image
                   width={50}
                   height={50}
-                  src="./images/brand/brand-07.svg"
+                  src="/images/brand/pc.png"
                   alt="Brand"
                 />
               </div>
@@ -108,7 +108,7 @@ const Integration = () => {
                 <Image
                   width={50}
                   height={50}
-                  src="./images/brand/brand-08.svg"
+                  src="/images/brand/cloud.png"
                   alt="Brand"
                 />
               </div>
@@ -157,7 +157,7 @@ const Integration = () => {
                 <Image
                   width={50}
                   height={50}
-                  src="./images/brand/brand-09.svg"
+                  src="/images/brand/vr.png"
                   alt="Brand"
                 />
               </div>
@@ -225,7 +225,7 @@ const Integration = () => {
                 <Image
                   width={50}
                   height={50}
-                  src="./images/brand/brand-10.svg"
+                  src="/images/brand/mobile.png"
                   alt="Brand"
                 />
               </div>
@@ -274,7 +274,7 @@ const Integration = () => {
                 <Image
                   width={50}
                   height={50}
-                  src="./images/brand/brand-11.svg"
+                  src="/images/brand/browser.png"
                   alt="Brand"
                 />
               </div>
@@ -323,7 +323,7 @@ const Integration = () => {
                 <Image
                   width={50}
                   height={50}
-                  src="./images/brand/brand-12.svg"
+                  src="/images/brand/console.png"
                   alt="Brand"
                 />
               </div>
