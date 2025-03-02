@@ -317,7 +317,7 @@ const Feature = () => {
             }}
           >
             <Image
-              src="/images/controller.svg"
+              src="/images/items/controller.png"
               width={180}
               height={180}
               alt="Gaming Controller"
@@ -464,8 +464,8 @@ const GameFeatureCard = ({ feature, index, inView }) => {
         >
           <Image
             src={icon}
-            width={40}
-            height={40}
+            width={60}
+            height={60}
             alt={title}
             className="relative z-10"
           />

@@ -26,13 +26,13 @@ export default function Home() {
       <Hero />
       <Brands />
       <Feature />
-      <About />
-      <GameSection />
       <FeaturesTab />
-      <FunFact />
+      <About />
+      {/* <GameSection /> */}
       <Integration />
-      <CTA />
-      <Testimonial />
+      <FunFact />
+      {/* <CTA /> */}
+      {/* <Testimonial /> */}
       <FAQ />
       {/* <Pricing /> */}
       {/* <Contact /> */}
