@@ -561,7 +561,7 @@ const EpicGamingShowcase: React.FC = () => {
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-black via-purple-950/20 to-black text-white">
+    <div className="relative min-h-screen w-full bg-gradient-to-b from-black via-purple-950/20 to-black pt-20 text-white">
       {/* Loading Screen */}
       <AnimatePresence>
         {loadingProgress < 100 && (

@@ -10,6 +10,11 @@ const Feature = () => {
   // State for parallax effect
   const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+  const [isMounted, setIsMounted] = useState(false);
   const canvasRef = useRef(null);
   const animationFrameId = useRef(null);
 
@@ -19,8 +24,19 @@ const Feature = () => {
     triggerOnce: false,
   });
 
+  // Set mounted state and get initial window dimensions
+  useEffect(() => {
+    setIsMounted(true);
+    setWindowDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  }, []);
+
   // Update scroll position for parallax effects
   useEffect(() => {
+    if (!isMounted) return;
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -33,18 +49,27 @@ const Feature = () => {
       });
     };
 
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isMounted]);
 
   // Advanced Canvas Background Animation
   useEffect(() => {
-    if (!canvasRef.current) return;
+    if (!canvasRef.current || !isMounted) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -235,7 +260,18 @@ const Feature = () => {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  }, [mousePosition]);
+  }, [mousePosition, isMounted]);
+
+  // Calculate the radial gradient
+  const radialGradientStyle = isMounted
+    ? {
+        background: `radial-gradient(circle at ${
+          50 + (mousePosition.x / windowDimensions.width) * 20
+        }% ${
+          30 + (mousePosition.y / windowDimensions.height) * 20
+        }%, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0.5) 60%)`,
+      }
+    : { background: "none" };
 
   return (
     <>
@@ -254,12 +290,7 @@ const Feature = () => {
         {/* Radial Gradient Overlay */}
         <div
           className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              typeof window !== "undefined"
-                ? `radial-gradient(circle at ${50 + (mousePosition.x / window.innerWidth) * 20}% ${30 + (mousePosition.y / window.innerHeight) * 20}%, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0.5) 60%)`
-                : "none",
-          }}
+          style={radialGradientStyle}
         />
 
         {/* Diagonal Light Streaks */}

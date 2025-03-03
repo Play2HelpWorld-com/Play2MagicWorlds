@@ -15,9 +15,7 @@ export const metadata: Metadata = {
 const PlayPage = () => {
   return (
     <main>
-      <div className="py-20">
-        <EpicGamingShowcase />
-      </div>
+      <EpicGamingShowcase />
     </main>
   );
 };
