@@ -566,22 +566,11 @@ const EpicGamingShowcase: React.FC = () => {
       <AnimatePresence>
         {loadingProgress < 100 && (
           <motion.div
-            className="absolute inset-0 bottom-96 top-0 z-50 mb-96 flex flex-col items-center justify-center bg-black"
+            className="absolute inset-0 bottom-96 top-0 z-50 mb-96 flex flex-col items-center justify-center bg-black dark:bg-black"
             initial={{ opacity: 1 }}
             animate={loaderControls}
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
           >
-            <motion.div
-              className="mb-8 text-5xl font-bold tracking-wider text-purple-500"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 0.2, duration: 0.8 },
-              }}
-            >
-              MAGIC WORLDS VAULT
-            </motion.div>
             <motion.div
               className="relative h-2 w-64 overflow-hidden rounded-full bg-gray-800"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -598,13 +587,6 @@ const EpicGamingShowcase: React.FC = () => {
                 animate="animate"
                 custom={loadingProgress}
               />
-            </motion.div>
-            <motion.div
-              className="mt-4 text-lg text-gray-400"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { delay: 0.6 } }}
-            >
-              Loading gaming experiences... {loadingProgress}%
             </motion.div>
           </motion.div>
         )}
@@ -658,7 +640,7 @@ const EpicGamingShowcase: React.FC = () => {
         <motion.div
           ref={showcaseRef}
           className="mb-12"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={mainVideoControls}
         >
           {videos.length > 0 && (
