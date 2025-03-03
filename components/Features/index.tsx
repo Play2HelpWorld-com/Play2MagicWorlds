@@ -255,7 +255,10 @@ const Feature = () => {
         <div
           className="pointer-events-none absolute inset-0"
           style={{
-            background: `radial-gradient(circle at ${50 + (mousePosition.x / window.innerWidth) * 20}% ${30 + (mousePosition.y / window.innerHeight) * 20}%, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0.5) 60%)`,
+            background:
+              typeof window !== "undefined"
+                ? `radial-gradient(circle at ${50 + (mousePosition.x / window.innerWidth) * 20}% ${30 + (mousePosition.y / window.innerHeight) * 20}%, rgba(124, 58, 237, 0.15) 0%, rgba(0, 0, 0, 0.5) 60%)`
+                : "none",
           }}
         />
 

@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 const PlayPage = () => {
   return (
-    <div className="pb-20 pt-40">
+    <main>
       <GameDownloads />
-    </div>
+    </main>
   );
 };
 

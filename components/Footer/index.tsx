@@ -206,7 +206,7 @@ const Footer = () => {
                   <Image
                     width={120}
                     height={120}
-                    src="/images/logo/Play2WorkWorld_Logo.png"
+                    src="/images/logo/logo.png"
                     alt="Game Logo"
                     className="z-10"
                   />
@@ -252,10 +252,10 @@ const Footer = () => {
                   Contact
                 </p>
                 <a
-                  href="mailto:players@gamingworld.com"
+                  href="mailto:mflynn1999@gmail.com"
                   className="hover:text-gaming inline-block text-white transition-colors duration-300"
                 >
-                  players@gamingworld.com
+                  mflynn1999@gmail.coms
                 </a>
               </motion.div>
             </motion.div>
@@ -399,7 +399,7 @@ const Footer = () => {
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                {new Date().getFullYear()} GamingWorld
+                {new Date().getFullYear()} MagicWorlds
               </motion.span>
               <motion.span
                 className="bg-gaming/10 border-gaming/30 ml-2 inline-block rounded border px-2 py-1 text-xs"

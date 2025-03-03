@@ -19,8 +19,9 @@ const GAMES = [
     trailer: "/videos/about/intro.mp4",
     downloads: 5247823,
     spotlight: true,
-    windowsDownload: "https://example.com/downloads/magic-worlds-windows.exe",
-    androidDownload: "https://example.com/downloads/magic-worlds-android.apk",
+    windowsDownload: "https://magicworlds.itch.io/magic-world",
+    androidDownload:
+      "https://drive.google.com/file/d/141f8EDsJhFywxbtJ0KfJUH8HRarf3P4j/view?usp=drive_link",
   },
 ];
 
@@ -117,7 +118,7 @@ const Button = ({
             alt={icon}
             width={24}
             height={24}
-            className="object-contain"
+            className="object-cover"
           />
         )}
         {children}
@@ -278,7 +279,7 @@ const GameCard = ({ game, onClick }) => {
 
       {/* Download buttons */}
       <motion.div
-        className="absolute bottom-4 right-4 flex gap-2"
+        className="absolute bottom-2 right-4 flex gap-2"
         initial={{ y: 20, opacity: 0 }}
         animate={{
           y: isHovered ? 0 : 20,
@@ -290,7 +291,7 @@ const GameCard = ({ game, onClick }) => {
           <Button
             variant="primary"
             icon="windows"
-            className="!px-4 !py-1.5 text-sm"
+            className="!px-2 !py-1 text-sm"
           >
             Windows
           </Button>
@@ -300,7 +301,7 @@ const GameCard = ({ game, onClick }) => {
           <Button
             variant="secondary"
             icon="android"
-            className="!px-4 !py-1.5 text-sm"
+            className="!px-2 !py-1 text-sm"
           >
             Android
           </Button>
@@ -478,15 +479,19 @@ const FeaturedGame = ({ game, onClose }) => {
               transition={{ delay: 0.4 }}
             >
               {game.platforms.includes("windows") && (
-                <Button className="flex-1" variant="primary" icon="windows">
-                  Download for Windows
-                </Button>
+                <a href={game.windowsDownload}>
+                  <Button className="flex-1" variant="primary" icon="windows">
+                    Download for Windows
+                  </Button>
+                </a>
               )}
 
               {game.platforms.includes("android") && (
-                <Button className="flex-1" variant="secondary" icon="android">
-                  Download for Android
-                </Button>
+                <a href={game.androidDownload}>
+                  <Button className="flex-1" variant="secondary" icon="android">
+                    Download for Android
+                  </Button>
+                </a>
               )}
             </motion.div>
           </div>
