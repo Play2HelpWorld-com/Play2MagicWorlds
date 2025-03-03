@@ -35,9 +35,12 @@ const EpicGamingShowcase: React.FC = () => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [videoCategory, setVideoCategory] = useState("All");
   const [videoReady, setVideoReady] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   // Refs
   const videoRef = useRef<HTMLVideoElement>(null);
+  const modalVideoRef = useRef<HTMLVideoElement>(null);
   const showcaseRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
 
@@ -151,18 +154,29 @@ const EpicGamingShowcase: React.FC = () => {
     setVideos(generatedVideos);
   }, []);
 
-  // Handle video loading
+  // Handle video loading and time updates
   useEffect(() => {
     if (videoRef.current) {
       const handleCanPlay = () => {
         setVideoReady(true);
+        setDuration(videoRef.current?.duration || 0);
+      };
+
+      const handleTimeUpdate = () => {
+        setCurrentTime(videoRef.current?.currentTime || 0);
       };
 
       videoRef.current.addEventListener("canplay", handleCanPlay);
+      videoRef.current.addEventListener("timeupdate", handleTimeUpdate);
+      videoRef.current.addEventListener("durationchange", () => {
+        setDuration(videoRef.current?.duration || 0);
+      });
 
       return () => {
         if (videoRef.current) {
           videoRef.current.removeEventListener("canplay", handleCanPlay);
+          videoRef.current.removeEventListener("timeupdate", handleTimeUpdate);
+          videoRef.current.removeEventListener("durationchange", () => {});
         }
       };
     }
@@ -177,6 +191,7 @@ const EpicGamingShowcase: React.FC = () => {
     }
 
     setVideoReady(false);
+    setCurrentTime(0);
 
     mainVideoControls
       .start({
@@ -237,6 +252,11 @@ const EpicGamingShowcase: React.FC = () => {
     if (videoRef.current) {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
+
+      // Also update modal video if it exists
+      if (modalVideoRef.current) {
+        modalVideoRef.current.muted = !isMuted;
+      }
     }
   };
 
@@ -262,11 +282,41 @@ const EpicGamingShowcase: React.FC = () => {
   };
 
   const handleOpenModal = () => {
+    // Pause the main video when opening modal
+    if (videoRef.current && isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
     setShowModal(true);
   };
 
   const handleCloseModal = () => {
+    // Pause the modal video when closing
+    if (modalVideoRef.current) {
+      modalVideoRef.current.pause();
+    }
     setShowModal(false);
+  };
+
+  const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (progressBarRef.current && videoRef.current && duration > 0) {
+      const rect = progressBarRef.current.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      const newTime = pos * duration;
+
+      // Update video time
+      videoRef.current.currentTime = newTime;
+
+      // Also update our state (for immediate UI update)
+      setCurrentTime(newTime);
+    }
+  };
+
+  // Format time function for displaying current time / duration
+  const formatTime = (seconds: number): string => {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
   // Filter videos by category
@@ -323,6 +373,9 @@ const EpicGamingShowcase: React.FC = () => {
     "RPG",
   ];
 
+  // Calculate progress percentage safely
+  const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
+
   return (
     <div className="relative min-h-screen w-full bg-gradient-to-b from-black via-purple-950/20 to-black text-white">
       {/* Loading Screen */}
@@ -343,7 +396,7 @@ const EpicGamingShowcase: React.FC = () => {
                 transition: { delay: 0.2, duration: 0.8 },
               }}
             >
-              EPIC GAMING VAULT
+              MAGIC WORLDS VAULT
             </motion.div>
             <motion.div
               className="relative h-2 w-64 overflow-hidden rounded-full bg-gray-800"
@@ -383,11 +436,11 @@ const EpicGamingShowcase: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <h1 className="mb-4 bg-gradient-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent">
-            EPIC GAMING VAULT
+            MAGIC WORLDS VAULT
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-gray-300">
-            Explore extraordinary gaming moments from your favorite titles,
-            captured in stunning detail
+            Explore extraordinary gaming moments from our Magic Worlds, captured
+            in stunning detail
           </p>
         </motion.div>
 
@@ -472,31 +525,15 @@ const EpicGamingShowcase: React.FC = () => {
                     <div
                       ref={progressBarRef}
                       className="group relative h-1 w-full cursor-pointer rounded-full bg-gray-700"
-                      onClick={(e) => {
-                        if (progressBarRef.current && videoRef.current) {
-                          const rect =
-                            progressBarRef.current.getBoundingClientRect();
-                          const pos = (e.clientX - rect.left) / rect.width;
-                          videoRef.current.currentTime =
-                            pos * videoRef.current.duration;
-                        }
-                      }}
+                      onClick={handleSeek}
                     >
                       <div
                         className="absolute h-full origin-left rounded-full bg-purple-500"
-                        style={{
-                          width: videoRef.current
-                            ? `${(videoRef.current.currentTime / videoRef.current.duration) * 100}%`
-                            : "0%",
-                        }}
+                        style={{ width: `${progressPercentage}%` }}
                       />
                       <div
                         className="absolute bottom-0 h-3 w-3 -translate-x-1/2 rounded-full bg-purple-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                        style={{
-                          left: videoRef.current
-                            ? `${(videoRef.current.currentTime / videoRef.current.duration) * 100}%`
-                            : "0%",
-                        }}
+                        style={{ left: `${progressPercentage}%` }}
                       />
                     </div>
 
@@ -521,14 +558,8 @@ const EpicGamingShowcase: React.FC = () => {
                           )}
                         </button>
                         <span className="text-sm text-gray-300">
-                          {videoRef.current
-                            ? `${Math.floor(videoRef.current.currentTime / 60)}:${Math.floor(
-                                videoRef.current.currentTime % 60,
-                              )
-                                .toString()
-                                .padStart(2, "0")}`
-                            : "0:00"}{" "}
-                          / {videos[activeIndex]?.duration}
+                          {formatTime(currentTime)} /{" "}
+                          {videos[activeIndex]?.duration}
                         </span>
                       </div>
                       <div className="flex items-center space-x-4">
@@ -645,6 +676,7 @@ const EpicGamingShowcase: React.FC = () => {
               </button>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <video
+                  ref={modalVideoRef}
                   className="h-full w-full object-contain"
                   src={videos[activeIndex]?.videoUrl}
                   // poster={videos[activeIndex]?.thumbnailUrl}
@@ -681,10 +713,10 @@ const EpicGamingShowcase: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
       >
-        <p>
-          © 2025 Epic Gaming Vault. All gameplay videos are property of their
+        {/* <p>
+          © 2025 Magic Worlds Vault. All gameplay videos are property of their
           respective owners.
-        </p>
+        </p> */}
       </motion.footer>
     </div>
   );
