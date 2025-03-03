@@ -1,6 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import Game from "@/components/Games";
+import GameDownloads from "@/components/Play";
 
 export const metadata: Metadata = {
   title: "Play Page - Games with Magic Worlds  | Play for Free Donation",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 const PlayPage = () => {
   return (
     <div className="pb-20 pt-40">
-      <Game />
+      <GameDownloads />
     </div>
   );
 };
