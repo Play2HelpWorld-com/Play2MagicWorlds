@@ -12,7 +12,7 @@ const GAMES = [
       "An immersive fantasy adventure with stunning visuals and engaging storyline.",
     platforms: ["windows", "android"],
     genre: ["RPG", "Adventure"],
-    size: "32.5 GB",
+    size: "1.2 GB",
     rating: 4.9,
     banner: "/images/play/magicworlds.jpg",
     logo: "/images/logo/logo.png",
@@ -458,11 +458,11 @@ const FeaturedGame = ({ game, onClose }) => {
                     i5-6600K / AMD Ryzen 5 1600
                   </div>
                   <div className="mb-2">
-                    <span className="font-semibold">Memory:</span> 16 GB RAM
+                    <span className="font-semibold">Memory:</span> 8 GB RAM
                   </div>
                   <div className="mb-2">
                     <span className="font-semibold">Graphics:</span> NVIDIA GTX
-                    1060 6GB / AMD Radeon RX 580
+                    1030 2GB / AMD Radeon RX 580
                   </div>
                   <div>
                     <span className="font-semibold">Storage:</span> {game.size}{" "}
