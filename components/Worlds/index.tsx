@@ -382,7 +382,7 @@ const EpicGamingShowcase: React.FC = () => {
       <AnimatePresence>
         {loadingProgress < 100 && (
           <motion.div
-            className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-black"
+            className="absolute inset-0 bottom-96 top-0 z-50 mb-96 flex flex-col items-center justify-center bg-black"
             initial={{ opacity: 1 }}
             animate={loaderControls}
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
