@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 
 const PlayPage = () => {
   return (
-    <div className="py-20 pt-40">
-      {/* <DynamicGameplayShowcase /> */}
-      <EpicGamingShowcase />
-      {/* <VideoGallery /> */}
-    </div>
+    <main>
+      <div className="py-20">
+        <EpicGamingShowcase />
+      </div>
+    </main>
   );
 };
 
