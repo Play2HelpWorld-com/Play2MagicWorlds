@@ -5,13 +5,13 @@ const menuData: Menu[] = [
     id: 1,
     title: "Play",
     newTab: false,
-    path: "/blog",
+    path: "/play",
   },
   {
     id: 3,
     title: "Worlds",
     newTab: false,
-    path: "/games",
+    path: "/worlds",
   },
 
   // {
