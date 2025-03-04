@@ -3,8 +3,8 @@ import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Support Page - Solid SaaS Boilerplate",
-  description: "This is Support page for magic Worlds",
+  title: "Contact Page - Magic Worlds",
+  description: "Built by MagicWorlds",
   // other metadata
 };
 

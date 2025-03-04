@@ -7,8 +7,8 @@ import VideoGallery from "@/components/Worlds";
 import EpicGamingShowcase from "@/components/Worlds";
 
 export const metadata: Metadata = {
-  title: "Worlds Page - Games with Magic Worlds  | Play for Free Donation",
-  description: "This is built by Magic Worlds",
+  title: "Worlds Page - Watch Gameplays",
+  description: "Built by MagicWorlds",
   // other metadata
 };
 
