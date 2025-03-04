@@ -38,10 +38,10 @@ const Contact = () => {
     // Replace with your actual EmailJS service ID, template ID, and public key
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        process.env.NEXT_PUBLIC_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
         formRef.current,
-        "YOUR_PUBLIC_KEY",
+        process.env.NEXT_PUBLIC_PUBLIC_KEY || "",
       )
       .then(() => {
         setFormState("success");
