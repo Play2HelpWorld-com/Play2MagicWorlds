@@ -5,26 +5,34 @@ const menuData: Menu[] = [
     id: 1,
     title: "Play",
     newTab: false,
-    path: "/games",
-  },
-  {
-    id: 2,
-    title: "Boosters",
-    newTab: false,
-    path: "/boosters",
+    path: "/play",
   },
   {
     id: 3,
-    title: "Charities",
+    title: "Worlds",
     newTab: false,
-    path: "/blog",
+    path: "/worlds",
   },
-  {
-    id: 4,
-    title: "Why Us",
-    newTab: false,
-    path: "/docs",
-  },
+
+  // {
+  //   id: 6,
+  //   title: "Score",
+  //   newTab: false,
+  //   submenu: [
+  //     {
+  //       id: 61,
+  //       title: "Leaderboard",
+  //       newTab: false,
+  //       path: "/leaderboard",
+  //     },
+  //     {
+  //       id: 64,
+  //       title: "Your Score",
+  //       newTab: false,
+  //       path: "/yourScore",
+  //     },
+  //   ],
+  // },
   {
     id: 5,
     title: "Join Us",
@@ -42,51 +50,13 @@ const menuData: Menu[] = [
         newTab: false,
         path: "https://mauricebigmoflynn.wordpress.com/",
       },
-      {
-        id: 55,
-        title: "Events",
-        newTab: false,
-        path: "https://www.eventbrite.com/e/full-community-meetup-tickets-346061678797",
-      },
-      {
-        id: 56,
-        title: "Votes",
-        newTab: false,
-        path: "https://www.surveymonkey.com/r/ZKM37SK",
-      },
-      {
-        id: 57,
-        title: "Jobs",
-        newTab: false,
-        path: "https://www.facebook.com/Play2.HelpWorld/photos/a.210431825738952/5317915491657201/",
-      },
-      {
-        id: 58,
-        title: "Contact Us",
-        newTab: false,
-        path: "/support",
-      },
     ],
   },
-
   {
-    id: 6,
-    title: "Score",
+    id: 4,
+    title: "About",
     newTab: false,
-    submenu: [
-      {
-        id: 61,
-        title: "Leaderboard",
-        newTab: false,
-        path: "/leaderboard",
-      },
-      {
-        id: 64,
-        title: "Your Score",
-        newTab: false,
-        path: "/yourScore",
-      },
-    ],
+    path: "/docs",
   },
 ];
 
