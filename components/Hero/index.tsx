@@ -233,7 +233,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 1 }}
               className="mt-10 flex flex-wrap gap-4"
             >
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onMouseEnter={() => setHoverGlow(true)}
@@ -251,7 +251,7 @@ const Hero = () => {
                 <span className="relative z-10 flex items-center">
                   <ClaimButton />
                 </span>
-              </motion.button>
+              </motion.div>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
