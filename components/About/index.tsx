@@ -29,13 +29,13 @@ const About = () => {
               className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
             >
               <Image
-                src="/images/about/about-light.jpg"
+                src="/images/img/magic-word-img-1.jpeg"
                 alt="About"
                 className="dark:hidden"
                 fill
               />
               <Image
-                src="/images/about/about-light.jpg"
+                src="/images/img/magic-word-img-1.jpeg"
                 alt="About"
                 className="hidden dark:block"
                 width={588}
@@ -64,16 +64,18 @@ const About = () => {
                 <span className="mb-4 mr-4 inline-flex rounded-full bg-meta px-4.5 py-1 text-metatitle uppercase text-white ">
                   New
                 </span>{" "}
-                Games with magic Worlds Features
+                Play2MagicWorld Features
               </span>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
                 You can have more
                 <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark">
-                  with Games with magic Worlds
+                  with Play2MagicWorld
                 </span>
               </h2>
               <p>
-              Games with magic Worlds is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money.
+                Play2MagicWorld is an innovative platform that lets you earn
+                while you play! Enjoy exciting games, collect rewards, and turn
+                them into real money.
               </p>
 
               <div className="mt-7.5 flex items-center gap-5">
@@ -137,13 +139,15 @@ const About = () => {
                 Charities
               </h4>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-              Games with magic Worlds 
+                Play2MagicWorld
                 <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg2 dark:before:bg-titlebgdark">
                   &nbsp;
                 </span>
               </h2>
               <p>
-              Games with magic Worlds is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money.
+                Play2MagicWorld is an innovative platform that lets you earn
+                while you play! Enjoy exciting games, collect rewards, and turn
+                them into real money.
               </p>
               <div>
                 <a
@@ -183,13 +187,13 @@ const About = () => {
               className="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
             >
               <Image
-                src="/images/about/p2hCharity.jpg"
+                src="/images/img/magic-word-img-4.jpeg"
                 alt="About"
                 className="dark:hidden"
                 fill
               />
               <Image
-                src="/images/about/p2hCharity.jpg"
+                src="/images/img/magic-word-img-4.jpeg"
                 alt="About"
                 className="hidden dark:block"
                 width={588}

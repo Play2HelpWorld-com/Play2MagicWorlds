@@ -9,7 +9,7 @@ export const testimonialData: Testimonial[] = [
     designation: "Founter @democompany",
     image: image1,
     content:
-      "Games with magic Worlds is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money.",
+      "Play2MagicWorld is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money.",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const testimonialData: Testimonial[] = [
     designation: "Founter @democompany",
     image: image2,
     content:
-      "Games with magic Worlds is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money..",
+      "Play2MagicWorld is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money..",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ export const testimonialData: Testimonial[] = [
     designation: "Founter @democompany",
     image: image1,
     content:
-      "Games with magic Worlds is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money.",
+      "Play2MagicWorld is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money.",
   },
   {
     id: 4,
@@ -33,6 +33,6 @@ export const testimonialData: Testimonial[] = [
     designation: "Founter @democompany",
     image: image2,
     content:
-      "Games with magic Worlds is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money.",
+      "Play2MagicWorld is an innovative platform that lets you earn while you play! Enjoy exciting games, collect rewards, and turn them into real money.",
   },
 ];

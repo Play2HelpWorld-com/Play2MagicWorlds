@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import YourScore from "@/components/Scores";
 
 export const metadata: Metadata = {
-  title: "Rewards Page - Games with magic Worlds  | Play for Free Donation",
-  description: "This is built by Magic",
+  title: "Rewards Page - Play2MagicWorld  | Play for Free Donation",
+  description: "This is built by bahadur",
 };
 
 const RewardsPage = () => {

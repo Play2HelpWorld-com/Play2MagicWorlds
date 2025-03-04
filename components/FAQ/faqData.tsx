@@ -3,7 +3,7 @@ import { FAQ } from "@/types/faq";
 const faqData: FAQ[] = [
   {
     id: 1,
-    quest: "What is the mission of Games with magic Worlds?",
+    quest: "What is the mission of Play2MagicWorld?",
     ans: "Our mission is to provide a free gaming platform that allows you to play games for free and donate to charity. Play games and help people in need.",
   },
   {

@@ -32,21 +32,21 @@ const Footer = () => {
                   <Image
                     width={110}
                     height={80}
-                    src="/images/logo/Play2WorkWorld_Logo.png"
+                    src="/images/logo/logo-new.png"
                     alt="Logo"
                     className="dark:hidden"
                   />
                   <Image
                     width={110}
                     height={80}
-                    src="/images/logo/logo-dark.png"
+                    src="/images/logo/logo-new.png"
                     alt="Logo"
                     className="hidden dark:block"
                   />
                 </a>
 
                 <p className="mb-10 mt-5">
-                Play games to donate to charity and help the world.
+                  Play games to donate to charity and help the world.
                 </p>
 
                 <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">

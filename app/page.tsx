@@ -13,10 +13,11 @@ import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 import GameSection from "@/components/Games/gameSection";
+import ClaimTokenSection from "../components/ClaimToken";
 
 export const metadata: Metadata = {
-  title: "Games with magic Worlds | Play for Free Donation",
-  description: "This is built by MagicWorld",
+  title: "Play2MusicWorld | Play for Free Donation",
+  description: "This is built by Bahadur",
   // other metadata
 };
 
@@ -27,6 +28,7 @@ export default function Home() {
       <Brands />
       <Feature />
       <About />
+      {/* <ClaimTokenSection /> */}
       <GameSection />
       <FeaturesTab />
       <FunFact />

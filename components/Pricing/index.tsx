@@ -14,7 +14,7 @@ const Pricing = () => {
               headerInfo={{
                 title: `PRICING PLANS`,
                 subtitle: `Simple Pricing`,
-                description: `Games with magic Worlds offers a wide variety of games that cater to all interests and skill levels.`,
+                description: `Play2MagicWorld offers a wide variety of games that cater to all interests and skill levels.`,
               }}
             />
           </div>
@@ -42,7 +42,7 @@ const Pricing = () => {
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
                 Small Pack
               </h4>
-              <p>Games with magic Worlds offers a wide variety of games that cater to all interests</p>
+              <p>Play2MagicWorld offers a wide variety of games that cater to all interests</p>
 
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                 <ul>
@@ -97,7 +97,7 @@ const Pricing = () => {
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
                 Medium Pack
               </h4>
-              <p>Games with magic Worlds offers a wide variety of games that cater to all interests</p>
+              <p>Play2MagicWorld offers a wide variety of games that cater to all interests</p>
 
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                 <ul>
@@ -148,7 +148,7 @@ const Pricing = () => {
               <h4 className="mb-2.5 text-para2 font-medium text-black dark:text-white">
                 Large Pack
               </h4>
-              <p>Games with magic Worlds offers a wide variety of games that cater to all interests</p>
+              <p>Play2MagicWorld offers a wide variety of games that cater to all interests</p>
 
               <div className="mt-9 border-t border-stroke pb-12.5 pt-9 dark:border-strokedark">
                 <ul>

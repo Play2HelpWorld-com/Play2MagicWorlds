@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tokeniser-ai-latest
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: CRON_SECRET
+        sync: false
+
+  - type: cron
+    name: daily-cron-job
+    schedule: "0 0 * * *"
+    env: node
+    buildCommand: npm install
+    startCommand: curl -X GET -H "Authorization: Bearer $CRON_SECRET" https://tokeniser-ai-latest.onrender.com/api/cron

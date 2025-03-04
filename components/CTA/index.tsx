@@ -32,7 +32,7 @@ const CTA = () => {
                 Join With Us Today & Help People
               </h2>
               <p>
-              Games with magic Worlds is a free gaming platform that allows you to play
+              Play2MagicWorld is a free gaming platform that allows you to play
                 games for free and donate to charity. Play games and help people
                 in need.
               </p>

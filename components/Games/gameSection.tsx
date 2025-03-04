@@ -1,9 +1,6 @@
 import Image from "next/image";
-import { Video } from "lucide-react";
 import Spotlight from "@/components/Games/spotlight";
 import GameData from "@/components/Games/gameData";
-import { GameInterface } from "@/types/game";
-
 
 export default function GameSection() {
   return (
@@ -33,7 +30,7 @@ export default function GameSection() {
                 key={game.id}
                 className=" group/card relative h-full overflow-hidden rounded-2xl bg-gray-800 p-px before:pointer-events-none before:absolute before:-left-40 before:-top-40 before:z-10 before:h-80 before:w-80 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-indigo-500/80 before:opacity-0 before:blur-3xl before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:-left-48 after:-top-48 after:z-30 after:h-64 after:w-64 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:rounded-full after:bg-indigo-500 after:opacity-0 after:blur-3xl after:transition-opacity after:duration-500 after:hover:opacity-20 before:group-hover:opacity-100"
               >
-                <div className="z-2 relative h-full overflow-hidden rounded-[inherit] bg-gray-950 after:absolute after:inset-0 after:bg-gradient-to-br after:from-gray-900/50 after:via-gray-800/25 after:to-gray-900/50">
+                <div className="relative z-2 h-full overflow-hidden rounded-[inherit] bg-gray-950 after:absolute after:inset-0 after:bg-gradient-to-br after:from-gray-900/50 after:via-gray-800/25 after:to-gray-900/50">
                   {/* Play Button */}
                   <a
                     href={game.playLink || "#"}
@@ -53,20 +50,13 @@ export default function GameSection() {
                   </a>
 
                   {/* Image */}
-                  <video
-                    width="350"
-                    height="288"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    
-                    className="rounded-lg"
-                  >
-                    <source src={game.video} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-
+                  <Image
+                    className="inline-flex"
+                    src={game.image}
+                    width={350}
+                    height={288}
+                    alt={game.alt}
+                  />
                   {/* Content */}
                   <div className="p-6">
                     <span className="bg-gradient-to-r from-indigo-500 to-indigo-200 bg-clip-text text-transparent">
