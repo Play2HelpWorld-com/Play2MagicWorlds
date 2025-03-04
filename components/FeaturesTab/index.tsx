@@ -31,7 +31,7 @@ const FeaturesTab = () => {
       description:
         "Jump into a world of excitement with our curated collection of games. From action-packed adventures to mind-bending puzzles, discover new experiences and challenge your skills.",
       benefits: [
-        "Access to 500+ premium games across all genres",
+        "Access to magic worlds games across all genres",
         "Exclusive in-game rewards and power-ups",
         "Real-time multiplayer with friends and global leaderboards",
         "Cross-platform synchronization for seamless gaming",
