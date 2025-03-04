@@ -332,7 +332,7 @@ const About = () => {
                 </div>
                 <motion.div whileHover={{ scale: 1.02 }} className="group">
                   <a
-                    href="#"
+                    href="/docs"
                     className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 font-bold text-white transition-all"
                   >
                     <span className="transition-all duration-300 group-hover:mr-2">
@@ -584,13 +584,13 @@ const About = () => {
             viewport={{ once: true }}
             className="mt-12 flex justify-center"
           >
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               className="rounded-full bg-gradient-to-r from-green-500 to-blue-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-blue-500/20"
             >
               Start Your Adventure
-            </motion.button>
+            </motion.button> */}
           </motion.div>
         </div>
       </section>
@@ -863,16 +863,18 @@ const About = () => {
                 className="flex flex-col justify-center gap-4 sm:flex-row"
                 variants={staggerChildren}
               >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-purple-500/20"
-                  variants={fadeInUp}
-                >
-                  Create Your Account
-                </motion.button>
+                <a href="/play">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="rounded-full bg-gradient-to-r from-purple-600 to-blue-600 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-purple-500/20"
+                    variants={fadeInUp}
+                  >
+                    Download Now
+                  </motion.button>
+                </a>
                 <motion.a
-                  href="#"
+                  href="/worlds"
                   className="rounded-full border border-purple-600 bg-transparent px-8 py-4 text-lg font-bold text-white transition-all duration-300 hover:bg-purple-900/20"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
