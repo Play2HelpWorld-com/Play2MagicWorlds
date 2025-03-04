@@ -436,7 +436,7 @@ const Footer = () => {
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                v3.4.2
+                v1.0.1
               </motion.span>
             </motion.p>
           </motion.div>
