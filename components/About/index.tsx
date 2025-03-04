@@ -272,8 +272,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* <!-- ===== Community & Impact Section ===== --> */}
-      <section className="relative overflow-hidden bg-gradient-to-t from-black to-gray-900 py-20">
+      <section className="relative overflow-hidden bg-gradient-to-t from-black to-gray-900 py-16 md:py-20">
         {/* Animated Background Grid */}
         <div className="absolute inset-0 z-0">
           <div
@@ -286,29 +285,30 @@ const About = () => {
           ></div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-c-1235 px-4 md:px-8 2xl:px-0">
-          <div className="flex flex-col-reverse items-center gap-12 md:flex-row">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col-reverse items-center gap-12 lg:flex-row">
+            {/* Left Section (Text & Content) */}
             <motion.div
               variants={staggerChildren}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="md:w-1/2"
+              className="w-full text-center lg:w-1/2 lg:text-left"
             >
               <motion.div variants={fadeInUp}>
                 <motion.div
                   variants={glowVariant}
                   animate="glow"
-                  className="mb-5 inline-block rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-2"
+                  className="mb-4 inline-block rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 text-sm sm:text-base"
                 >
                   <span className="font-bold uppercase tracking-wider text-white">
                     Community Impact
                   </span>
                 </motion.div>
-                <h2 className="mb-6 text-3xl font-bold text-white lg:text-4xl">
+                <h2 className="mb-4 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
                   Gaming <span className="text-blue-400">For Good</span>
                 </h2>
-                <p className="mb-6 text-gray-300">
+                <p className="mb-6 text-sm text-gray-300 sm:text-base">
                   Every adventure you embark on contributes to something
                   greater. Our platform donates a portion of all earnings to
                   global charities, turning your gaming passion into positive
@@ -316,14 +316,14 @@ const About = () => {
                 </p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="mt-8">
-                <div className="mb-6 flex gap-4">
+              <motion.div variants={fadeInUp} className="mt-6">
+                <div className="mb-6 flex flex-wrap justify-center gap-3 sm:gap-4 lg:justify-start">
                   {["Environmental", "Education", "Healthcare", "Wildlife"].map(
                     (cause, index) => (
                       <motion.span
                         key={index}
                         whileHover={{ scale: 1.05 }}
-                        className="rounded-full bg-blue-900 bg-opacity-20 px-4 py-2 text-sm font-medium text-blue-300"
+                        className="rounded-full bg-blue-900 bg-opacity-20 px-3 py-2 text-xs font-medium text-blue-300 sm:px-4 sm:text-sm"
                       >
                         {cause}
                       </motion.span>
@@ -333,7 +333,7 @@ const About = () => {
                 <motion.div whileHover={{ scale: 1.02 }} className="group">
                   <a
                     href="/docs"
-                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 font-bold text-white transition-all"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-5 py-2 text-sm font-bold text-white transition-all sm:px-6 sm:py-3 sm:text-base"
                   >
                     <span className="transition-all duration-300 group-hover:mr-2">
                       Learn About Our Impact
@@ -351,6 +351,7 @@ const About = () => {
               </motion.div>
             </motion.div>
 
+            {/* Right Section (Image & Card) */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, x: 20, rotateY: 30 },
@@ -360,9 +361,9 @@ const About = () => {
               whileInView="visible"
               transition={{ duration: 1.2, type: "spring" }}
               viewport={{ once: true }}
-              className="md:w-1/2"
+              className="w-full lg:w-1/2"
             >
-              <div className="relative">
+              <div className="relative mx-auto w-full max-w-md sm:max-w-lg lg:max-w-full">
                 {/* 3D Card Effect */}
                 <div className="absolute -inset-1 animate-pulse rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-70 blur"></div>
                 <div className="relative overflow-hidden rounded-lg bg-gray-900/50 p-1">
@@ -374,45 +375,45 @@ const About = () => {
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                       <motion.div
                         variants={staggerChildren}
-                        className="mb-4 flex items-center gap-4"
+                        className="mb-3 flex items-center gap-3 sm:mb-4 sm:gap-4"
                       >
                         {[1, 2, 3].map((_, i) => (
                           <motion.div
                             key={i}
                             variants={fadeInUp}
-                            className="flex h-12 w-12 items-center justify-center rounded-full bg-white bg-opacity-20 backdrop-blur-sm"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-white bg-opacity-20 backdrop-blur-sm sm:h-12 sm:w-12"
                           >
                             <Image
                               src={`/images/about/user-${i + 1}.png`}
                               alt={`Charity ${i + 1}`}
-                              width={30}
-                              height={30}
+                              width={24}
+                              height={24}
                               className="rounded-full"
                             />
                           </motion.div>
                         ))}
                         <motion.div
                           variants={fadeInUp}
-                          className="font-medium text-white"
+                          className="text-sm font-medium text-white sm:text-base"
                         >
                           +24 more charities
                         </motion.div>
                       </motion.div>
                       <motion.h3
                         variants={fadeInUp}
-                        className="mb-2 text-2xl font-bold text-white"
+                        className="mb-1 text-xl font-bold text-white sm:mb-2 sm:text-2xl"
                       >
                         $2.4M Donated
                       </motion.h3>
                       <motion.div
                         variants={fadeInUp}
-                        className="h-2.5 w-full rounded-full bg-gray-700"
+                        className="h-2 w-full rounded-full bg-gray-700"
                       >
                         <motion.div
-                          className="h-2.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+                          className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
                           style={{ width: "70%" }}
                           initial={{ width: "0%" }}
                           whileInView={{ width: "70%" }}
@@ -422,7 +423,7 @@ const About = () => {
                       </motion.div>
                       <motion.p
                         variants={fadeInUp}
-                        className="mt-2 text-sm text-blue-300"
+                        className="mt-1 text-xs text-blue-300 sm:text-sm"
                       >
                         70% to our yearly goal
                       </motion.p>
