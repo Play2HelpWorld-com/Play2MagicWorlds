@@ -35,7 +35,6 @@ export default function Home() {
       {/* <FunFact /> */}
       {/* <CTA /> */}
       {/* <Testimonial /> */}
-      <ClaimTokenSection />
       <FAQ />
       {/* <Pricing /> */}
       {/* <Contact /> */}
