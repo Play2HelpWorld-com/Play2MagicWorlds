@@ -260,10 +260,10 @@ const Footer = () => {
                   Contact
                 </p>
                 <a
-                  href="mailto:mflynn1999@gmail.com"
+                  href="mailto:magicworldsonline2025@gmail.com"
                   className="hover:text-gaming inline-block text-white transition-colors duration-300"
                 >
-                  mflynn1999@gmail.com
+                  magicworldsonline2025@gmail.com
                 </a>
               </motion.div>
             </motion.div>
