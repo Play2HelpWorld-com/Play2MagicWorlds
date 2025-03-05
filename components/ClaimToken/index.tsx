@@ -13,12 +13,19 @@ import {
   RotateCcw,
 } from "lucide-react";
 import Image from "next/image";
-import { useAccount, useConnect, useDisconnect, useWriteContract, useSimulateContract} from "wagmi";
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useWriteContract,
+  useSimulateContract,
+} from "wagmi";
 import { metaMask } from "wagmi/connectors";
 import { truncateAddress } from "../../utils/lib/truncateAddress";
 import { RegenerateMerkleTree } from "@/utils/lib/generateMerkleDataStructure";
 import TokenDistributorAbi from "@/abi/TokenDistributor.json";
-const contractAddress = process.env.NEXT_PUBLIC_TOKEN_DISTRIBUTOR_ADDRESS || "0x"
+const contractAddress =
+  process.env.NEXT_PUBLIC_TOKEN_DISTRIBUTOR_ADDRESS || "0x";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { ethers, keccak256 } from "ethers";
@@ -40,8 +47,10 @@ const ClaimTokenSection = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [userTag, setUserTag] = useState("");
   const [modalStep, setModalStep] = useState<ModalStep>("userTag");
-  const [claimArgs, setClaimArgs] = useState<readonly [string, bigint, `0x${string}`[]] | undefined>(undefined);
-  const [claimCalled, setClaimCalled] = useState(false)
+  const [claimArgs, setClaimArgs] = useState<
+    readonly [string, bigint, `0x${string}`[]] | undefined
+  >(undefined);
+  const [claimCalled, setClaimCalled] = useState(false);
 
   // Wagmi hooks
   const { address, isConnected } = useAccount();
@@ -116,7 +125,6 @@ const ClaimTokenSection = () => {
     isError,
   } = useWriteContract();
 
-
   //simulate the transaction before sending it to the blockchain
   //this is to check if the transaction would fail
   //if claimArgs is not defined, then don't simulate
@@ -129,7 +137,7 @@ const ClaimTokenSection = () => {
 
   useEffect(() => {
     if (simulateError && claimCalled) {
-      console.error('Simulation error:', simulateError);
+      console.error("Simulation error:", simulateError);
       toast.error(`Transaction would fail: ${simulateError.message}`);
     }
   }, [simulateError]);
@@ -137,15 +145,15 @@ const ClaimTokenSection = () => {
   useEffect(() => {
     const updateClaimedTokens = async () => {
       if (isSuccess) {
-    
-        //update the table here after a succesful claim 
+        //update the table here after a succesful claim
         //amount_claimed: increment by the number of tokens claimed
-        //display claimable tokens =.> amount - token_claimed 
+        //display claimable tokens =.> amount - token_claimed
         try {
-         
-         
         } catch (error) {
-          console.error("Error while updating claimed tokens at score.tsx", error);
+          console.error(
+            "Error while updating claimed tokens at score.tsx",
+            error,
+          );
         }
       }
     };
@@ -161,27 +169,40 @@ const ClaimTokenSection = () => {
     }
   }, [isError]);
 
-
   //the user data field should also caontain a modified-date field.
   //I want to compare this value with the date of the merkel tree dodified date
 
-  const handleClaim = async ({token_contract_address, amount, wallet_address}: {token_contract_address: string, amount: number, wallet_address: string}) => {
-   
+  const handleClaim = async ({
+    token_contract_address,
+    amount,
+    wallet_address,
+  }: {
+    token_contract_address: string;
+    amount: number;
+    wallet_address: string;
+  }) => {
     setClaimCalled(true);
 
     const leaf = keccak256(
-      ethers.AbiCoder.defaultAbiCoder().encode(["address", "address", "uint256"], [
-        wallet_address,
-        token_contract_address,
-        ethers.parseUnits(amount.toString(), 5),
-    ]))
+      ethers.AbiCoder.defaultAbiCoder().encode(
+        ["address", "address", "uint256"],
+        [
+          wallet_address,
+          token_contract_address,
+          ethers.parseUnits(amount.toString(), 5),
+        ],
+      ),
+    );
 
-    let merkelDataResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/api/games/getMerkelDataView/`, {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
+    let merkelDataResponse = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/api/games/getMerkelDataView/`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
 
     const merkelData = await merkelDataResponse.json();
 
@@ -191,7 +212,9 @@ const ClaimTokenSection = () => {
 
     const merkelDataJson = merkelData.data;
 
-    const {merkleTree} = RegenerateMerkleTree(merkelDataJson.serialized_leaves);
+    const { merkleTree } = RegenerateMerkleTree(
+      merkelDataJson.serialized_leaves,
+    );
     const proof = merkleTree.getHexProof(leaf);
 
     const args = [
@@ -203,7 +226,7 @@ const ClaimTokenSection = () => {
     setClaimCalled(true);
     setClaimArgs(args);
 
-    await new Promise(resolve => setTimeout(resolve, 0));
+    await new Promise((resolve) => setTimeout(resolve, 0));
     try {
       if (!simulateError) {
         writeContract({
@@ -219,7 +242,7 @@ const ClaimTokenSection = () => {
         position: "top-right",
       });
     }
-  }
+  };
 
   const connectToBlockchain = async (
     wallet_address: string,
@@ -470,24 +493,6 @@ const ClaimTokenSection = () => {
           <div className="flex items-center gap-8 lg:gap-32.5">
             <motion.div
               variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
-            >
-              <Image
-                src="/images/img/claim-token.webp"
-                alt="Rewards"
-                width={588}
-                height={526.5}
-              />
-            </motion.div>
-            <motion.div
-              variants={{
                 hidden: { opacity: 0, x: 20 },
                 visible: { opacity: 1, x: 0 },
               }}
@@ -497,24 +502,6 @@ const ClaimTokenSection = () => {
               viewport={{ once: true }}
               className="animate_right md:w-1/2"
             >
-              <span className="font-medium uppercase text-black dark:text-white">
-                <span className="mb-4 mr-4 inline-flex rounded-full bg-meta px-4.5 py-1 text-metatitle uppercase text-white">
-                  New
-                </span>{" "}
-                Claim Your Rewards
-              </span>
-              <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Convert Your Gaming Success to{" "}
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark">
-                  Real Value
-                </span>
-              </h2>
-              <p className="mb-10">
-                Turn your earned coupons into MagicWorld Tokens (MWT). These
-                tokens can be withdrawn as real money or donated to make a
-                difference in someone's life.
-              </p>
-
               <button
                 onClick={handleClaimClick}
                 className="mt-10 inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white hover:opacity-90 dark:bg-white dark:text-black"

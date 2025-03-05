@@ -320,7 +320,7 @@ const Footer = () => {
                   },
                   {
                     name: "White Papers",
-                    url: "https://helix-labs-gmbh.notion.site/Magic-Worlds-Blockchain-Tokenomics-Whitepaper-1a3f1e882525807392a6c0c34651efb9",
+                    url: "https://helix-labs-gmbh.notion.site/Magic-Worlds-Layer-2-Whitepaper-1adf1e88252580baa4e9cb08def48ba7?pvs=4",
                   },
                 ],
               },

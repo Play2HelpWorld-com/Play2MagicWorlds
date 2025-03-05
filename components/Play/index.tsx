@@ -913,7 +913,7 @@ const GameDownloads = () => {
               {Array.from({ length: 20 }).map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute rounded-full bg-white opacity-10"
+                  className="absolute rounded-full bg-purple-800/10 opacity-10"
                   initial={{
                     x: Math.random() * 100 - 50 + "%",
                     y: Math.random() * 100 - 50 + "%",
@@ -973,24 +973,28 @@ const GameDownloads = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <Button
-                  className="!px-8 !py-3 text-lg"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 0 20px rgba(167, 139, 250, 0.5)",
-                  }}
-                >
-                  Sign Up Free
-                </Button>
-                <Button
-                  className="border-2 border-white/20 bg-transparent !px-8 !py-3 text-lg hover:bg-white/10"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)",
-                  }}
-                >
-                  Learn More
-                </Button>
+                <a href="/support">
+                  <Button
+                    className="!px-8 !py-3 text-lg"
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 0 20px rgba(167, 139, 250, 0.5)",
+                    }}
+                  >
+                    Join Us
+                  </Button>
+                </a>
+                <a href="/docs">
+                  <Button
+                    className="border-2 border-white/20 bg-transparent !px-8 !py-3 text-lg hover:bg-white/10"
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)",
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </a>
               </motion.div>
             </div>
           </motion.div>
