@@ -68,28 +68,6 @@ export default function Game() {
 
                   {/* Image */}
                   {/* Video */}
-                  {game.video ? (
-                    <video
-                      width="350"
-                      height="288"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="rounded-lg"
-                    >
-                      <source src={game.video} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  ) : (
-                    <Image
-                      className="inline-flex"
-                      src={game.image}
-                      width={350}
-                      height={288}
-                      alt={game.alt}
-                    />
-                  )}
 
                   {/* Content */}
                   <div className="p-6">

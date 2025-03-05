@@ -4,7 +4,6 @@ import Spotlight from "@/components/Games/spotlight";
 import GameData from "@/components/Games/gameData";
 import { GameInterface } from "@/types/game";
 
-
 export default function GameSection() {
   return (
     <section>
@@ -51,22 +50,6 @@ export default function GameSection() {
                       <path fill="currentColor" d="M8 5v14l11-7z" />
                     </svg>
                   </a>
-
-                  {/* Image */}
-                  <video
-                    width="350"
-                    height="288"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    
-                    className="rounded-lg"
-                  >
-                    <source src={game.video} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-
                   {/* Content */}
                   <div className="p-6">
                     <span className="bg-gradient-to-r from-indigo-500 to-indigo-200 bg-clip-text text-transparent">

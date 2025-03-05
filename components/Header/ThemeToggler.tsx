@@ -1,14 +1,20 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
+  // set default theme to dark
+
+  useEffect(() => {
+    setTheme("dark");
+  }, []);
 
   return (
     <button
       aria-label="theme toggler"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="bg-gray-2 dark:bg-dark-bg absolute right-17 mr-1.5 flex cursor-pointer items-center justify-center rounded-full text-black dark:text-white lg:static"
+      className="bg-gray-2 dark:bg-dark-bg mr-1.5 flex cursor-pointer items-center justify-center rounded-full text-black dark:text-white lg:static"
     >
       <Image
         src="/images/icon/icon-moon.svg"

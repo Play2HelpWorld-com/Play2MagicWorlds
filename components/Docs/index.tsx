@@ -16,33 +16,49 @@ import {
 } from "lucide-react";
 
 // Particle component for magical effects
-const Particles = ({ active }) => {
-  const canvasRef = useRef(null);
+
+type Particle = {
+  x: number;
+  y: number;
+  size: number;
+  color: string;
+  speedX: number;
+  speedY: number;
+};
+
+const Particles = ({ active }: { active: boolean }) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (!active) return;
 
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const particles = [];
+    const particles: Particle[] = [];
     const colors = ["#8a2be2", "#ff69b4", "#00bfff", "#7fff00"];
 
+    // Store random values in variables before use
     for (let i = 0; i < 50; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 5 + 1,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        speedX: Math.random() * 3 - 1.5,
-        speedY: Math.random() * 3 - 1.5,
-      });
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const size = Math.random() * 5 + 1;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const speedX = Math.random() * 3 - 1.5;
+      const speedY = Math.random() * 3 - 1.5;
+
+      particles.push({ x, y, size, color, speedX, speedY });
     }
 
     function animate() {
+      if (!ctx || !canvas) return; // Extra null check for safety
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
       particles.forEach((p) => {
         ctx.fillStyle = p.color;
         ctx.beginPath();
@@ -152,7 +168,7 @@ const ContentSection = ({ section, isActive }) => {
 
 // 3D Card effect component
 const Card3D = ({ children }) => {
-  const cardRef = useRef(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
 

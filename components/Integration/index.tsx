@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import SectionHeader from "../Common/SectionHeader";
 
 const Integration = () => {
-  const [isHovering, setIsHovering] = useState(null);
+  const [isHovering, setIsHovering] = useState<number | null>(null);
   const [animateBackground, setAnimateBackground] = useState(false);
 
   useEffect(() => {
@@ -93,7 +93,7 @@ const Integration = () => {
       scale: [1, 1.2, 1],
       transition: {
         repeat: Infinity,
-        repeatType: "mirror",
+        repeatType: "loop" as const,
         duration: 3 + (i.delay || 0),
         ease: "easeInOut",
         delay: i.delay || 0,
@@ -109,7 +109,7 @@ const Integration = () => {
         duration: 20,
         ease: "linear",
         repeat: Infinity,
-        repeatType: "mirror",
+        repeatType: "loop" as const,
       },
     },
   };

@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const FeaturesTab = () => {
   const [currentTab, setCurrentTab] = useState("tabOne");
-  const [isHovering, setIsHovering] = useState(null);
-  const audioRef = useRef(null);
+  const [isHovering, setIsHovering] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   // Play sound effect on tab change
   useEffect(() => {
@@ -80,11 +80,19 @@ const FeaturesTab = () => {
   const glowVariants = {
     idle: {
       boxShadow: "0 0 0px rgba(124, 58, 237, 0)",
-      transition: { duration: 0.5, repeat: Infinity, repeatType: "reverse" },
+      transition: {
+        duration: 0.5,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+      },
     },
     active: {
       boxShadow: "0 0 20px rgba(124, 58, 237, 0.8)",
-      transition: { duration: 0.5, repeat: Infinity, repeatType: "reverse" },
+      transition: {
+        duration: 0.5,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+      },
     },
   };
 
@@ -116,7 +124,7 @@ const FeaturesTab = () => {
         <div className="absolute inset-0 z-0">
           <div className="grid h-full w-full grid-cols-12 grid-rows-12">
             {Array(144)
-              .fill()
+              .fill(null)
               .map((_, i) => (
                 <div key={i} className="relative">
                   <div
@@ -269,7 +277,7 @@ const FeaturesTab = () => {
                           <div className="absolute inset-0 opacity-20">
                             <div className="absolute left-0 top-0 grid h-full w-full grid-cols-6 grid-rows-6">
                               {Array(36)
-                                .fill()
+                                .fill(null)
                                 .map((_, i) => (
                                   <div
                                     key={i}

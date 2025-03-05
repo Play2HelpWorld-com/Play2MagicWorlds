@@ -36,25 +36,104 @@ const FunFact = () => {
   const donationsCount = useCounter(500000);
 
   // Particles for background effect
-  const [particles, setParticles] = useState([]);
+  interface Particle {
+    id: number;
+    x: number;
+    y: number;
+    size: number;
+    speed: number;
+    opacity: number;
+  }
+
+  const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    const generateParticles = () => {
-      const newParticles = [];
-      for (let i = 0; i < 30; i++) {
-        newParticles.push({
-          id: i,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
-          size: Math.random() * 10 + 2,
-          speed: Math.random() * 0.2 + 0.1,
-          opacity: Math.random() * 0.5 + 0.1,
-        });
+    const canvas = document.getElementById(
+      "footer-particles",
+    ) as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // Resize canvas
+    const resizeCanvas = () => {
+      if (canvas.parentElement) {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
       }
-      setParticles(newParticles);
     };
 
-    generateParticles();
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    // Particle properties
+    const particles: {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      color: string;
+      alpha: number;
+    }[] = [];
+
+    // Create particles
+    const createParticles = () => {
+      const particleCount = Math.floor(canvas.width / 10);
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 3 + 1,
+          speedX: (Math.random() - 0.5) * 0.5,
+          speedY: (Math.random() - 0.5) * 0.5,
+          color: getRandomColor(),
+          alpha: Math.random() * 0.5 + 0.1,
+        });
+      }
+    };
+
+    // Get random gaming-themed color
+    const getRandomColor = () => {
+      const colors = ["#00ff99", "#ff00cc", "#00ccff", "#ffcc00", "#ff3366"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    };
+
+    // Animate particles
+    const animateParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Update position
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        // Wrap around edges
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+      }
+
+      requestAnimationFrame(animateParticles);
+    };
+
+    createParticles();
+    animateParticles();
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+    };
   }, []);
 
   return (

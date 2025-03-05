@@ -7,10 +7,10 @@ const GameData: Game[] = [
     title: "UP!",
     description:
       "Streamline the product development flow with a content platform that's aligned across specs and insights.",
-    video: "public/images/game/learning.mp4", // Ensure this file is inside /public/videos/
+    image: "/images/games/YUM_Summer.webp", // Ensure this file is inside /public/videos/
     alt: "Workflow 01",
     buttonText: "Play Now",
- 
+
     playLink: `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/tetrixGame/`,
   },
   {
@@ -40,8 +40,7 @@ const GameData: Game[] = [
     image: "/images/games/HISS+WWF-UK.webp",
     alt: "Workflow 01",
     buttonText: "Play Now",
-    playLink:
-      `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/snakeGame/`,
+    playLink: `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/snakeGame/`,
   },
   {
     id: 5,
@@ -51,8 +50,7 @@ const GameData: Game[] = [
     image: "/images/games/321+RED_CROSS.webp",
     alt: "Workflow 02",
     buttonText: "Play Now",
-    playLink:
-      `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/racingGame/`,
+    playLink: `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/racingGame/`,
   },
   {
     id: 6,
@@ -62,8 +60,7 @@ const GameData: Game[] = [
     image: "/images/games/MORE+MSF.webp",
     alt: "Workflow 03",
     buttonText: "Play Now",
-    playLink:
-      `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/railrushGame/`,
+    playLink: `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/railrushGame/`,
   },
   {
     id: 7,
@@ -83,8 +80,7 @@ const GameData: Game[] = [
     image: "/images/games/FLY+UNICEF.webp",
     alt: "Workflow 02",
     buttonText: "Play Now",
-    playLink:
-      `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/spaceShotter/`,
+    playLink: `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/spaceShotter/`,
   },
   {
     id: 10,
@@ -94,8 +90,7 @@ const GameData: Game[] = [
     image: "/images/games/GO+KIVA.webp",
     alt: "Workflow 01",
     buttonText: "Play Now",
-    playLink:
-      `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/goGame/`,
+    playLink: `${process.env.NEXT_PUBLIC_GAME_SERVER_URI}/goGame/`,
   },
 ];
 

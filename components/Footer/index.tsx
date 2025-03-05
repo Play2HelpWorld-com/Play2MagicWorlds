@@ -141,7 +141,11 @@ const Footer = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: [0, 0.5, 0.2],
-      transition: { duration: 3, repeat: Infinity, repeatType: "reverse" },
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+      },
     },
   };
 
@@ -149,7 +153,11 @@ const Footer = () => {
     hidden: { scale: 1 },
     visible: {
       scale: [1, 1.05, 1],
-      transition: { duration: 2, repeat: Infinity, repeatType: "reverse" },
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+      },
     },
   };
 
@@ -252,10 +260,10 @@ const Footer = () => {
                   Contact
                 </p>
                 <a
-                  href="mailto:mflynn1999@gmail.com"
+                  href="mailto:magicworldsonline2025@gmail.com"
                   className="hover:text-gaming inline-block text-white transition-colors duration-300"
                 >
-                  mflynn1999@gmail.com
+                  magicworldsonline2025@gmail.com
                 </a>
               </motion.div>
             </motion.div>
