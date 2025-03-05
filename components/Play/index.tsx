@@ -27,15 +27,31 @@ const GAMES = [
 
 // Particle system component
 const ParticleField = () => {
+  const [particles, setParticles] = useState<
+    { x: number; y: number; size: number }[]
+  >([]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const newParticles = Array.from({ length: 50 }).map(() => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      size: Math.random() * 6 + 2,
+    }));
+
+    setParticles(newParticles);
+  }, []);
+
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
-      {Array.from({ length: 50 }).map((_, i) => (
+      {particles.map((particle, i) => (
         <motion.div
           key={i}
           className="absolute rounded-full bg-blue-500 opacity-30"
           initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
+            x: particle.x,
+            y: particle.y,
             scale: Math.random() * 0.5 + 0.5,
           }}
           animate={{
@@ -56,8 +72,8 @@ const ParticleField = () => {
             ease: "linear",
           }}
           style={{
-            width: `${Math.random() * 6 + 2}px`,
-            height: `${Math.random() * 6 + 2}px`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
             filter: `blur(${Math.random() * 2}px)`,
           }}
         />
