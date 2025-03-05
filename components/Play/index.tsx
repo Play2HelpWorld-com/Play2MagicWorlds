@@ -71,7 +71,7 @@ const Button = ({
   children,
   className = "",
   variant = "primary",
-  icon,
+  icon = null as string | null,
   ...props
 }) => {
   const controls = useAnimation();
@@ -504,7 +504,9 @@ const FeaturedGame = ({ game, onClose }) => {
 // Main component
 const GameDownloads = () => {
   const [filter, setFilter] = useState("all");
-  const [selectedGame, setSelectedGame] = useState(null);
+  const [selectedGame, setSelectedGame] = useState<null | (typeof GAMES)[0]>(
+    null,
+  );
   const [spotlight, setSpotlight] = useState(0);
   const [scrollY, setScrollY] = useState(0);
 
@@ -595,7 +597,7 @@ const GameDownloads = () => {
             <Button
               className="!px-8 !py-4 text-lg"
               onClick={() => {
-                document.getElementById("games-section").scrollIntoView({
+                document.getElementById("games-section")?.scrollIntoView({
                   behavior: "smooth",
                 });
               }}

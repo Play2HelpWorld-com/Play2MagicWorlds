@@ -141,7 +141,11 @@ const Footer = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: [0, 0.5, 0.2],
-      transition: { duration: 3, repeat: Infinity, repeatType: "reverse" },
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+      },
     },
   };
 
@@ -149,7 +153,11 @@ const Footer = () => {
     hidden: { scale: 1 },
     visible: {
       scale: [1, 1.05, 1],
-      transition: { duration: 2, repeat: Infinity, repeatType: "reverse" },
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+      },
     },
   };
 
