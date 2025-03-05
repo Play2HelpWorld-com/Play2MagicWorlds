@@ -329,20 +329,28 @@ const GameCard = ({ game, onClick }) => {
 
 // Featured game component with video background
 const FeaturedGame = ({ game, onClose }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden"; // Prevent body scrolling
+    return () => {
+      document.body.style.overflow = "auto"; // Restore body scrolling
+    };
+  }, []);
+
   return (
     <motion.div
-      className="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/80 p-4 backdrop-blur-md"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="relative mx-6 max-h-[90vh] w-full max-w-6xl overflow-hidden rounded-2xl bg-gray-900"
+        className="relative flex max-h-[95vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl bg-gray-900"
         initial={{ scale: 0.9, y: 20 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.9, y: 20 }}
         transition={{ type: "spring", damping: 20 }}
       >
+        {/* Close Button */}
         <button
           className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white transition-colors hover:bg-white/20"
           onClick={onClose}
@@ -358,9 +366,10 @@ const FeaturedGame = ({ game, onClose }) => {
           </svg>
         </button>
 
-        <div className="flex flex-col lg:flex-row">
-          {/* Game trailer/preview */}
-          <div className="relative h-80 w-full lg:h-auto lg:w-7/12">
+        {/* Content Container */}
+        <div className="flex flex-col overflow-y-auto lg:flex-row">
+          {/* Game Trailer/Preview Section */}
+          <div className="relative h-80 flex-shrink-0 lg:h-auto lg:w-7/12">
             {game.trailer ? (
               <video autoPlay loop muted className="h-full w-full object-cover">
                 <source src={game.trailer} type="video/mp4" />
@@ -377,18 +386,19 @@ const FeaturedGame = ({ game, onClose }) => {
               </div>
             )}
 
+            {/* Game Title and Genre */}
             <motion.div
-              className="absolute bottom-0 left-0 p-6"
+              className="absolute bottom-0 left-0 p-4 md:p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <h2 className="text-4xl font-bold">{game.title}</h2>
-              <div className="mt-2 flex gap-2">
+              <h2 className="text-2xl font-bold md:text-4xl">{game.title}</h2>
+              <div className="mt-2 flex flex-wrap gap-2">
                 {game.genre.map((g) => (
                   <span
                     key={g}
-                    className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium"
+                    className="rounded-full bg-white/10 px-2 py-1 text-xs font-medium md:text-sm"
                   >
                     {g}
                   </span>
@@ -397,116 +407,125 @@ const FeaturedGame = ({ game, onClose }) => {
             </motion.div>
           </div>
 
-          {/* Game details */}
-          <div className="flex w-full flex-col justify-between p-6 lg:w-5/12">
+          {/* Game Details Section */}
+          <div className="flex flex-col justify-between overflow-y-auto p-4 md:p-6 lg:w-5/12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
+              className="space-y-6"
             >
-              <p className="text-lg text-gray-300">{game.description}</p>
+              {/* Description */}
+              <p className="text-base text-gray-300 md:text-lg">
+                {game.description}
+              </p>
 
-              <div className="mt-6 grid grid-cols-2 gap-4">
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-400">Size</h4>
-                  <p className="text-lg">{game.size}</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-400">
-                    Rating
-                  </h4>
-                  <div className="flex items-center">
-                    <span className="mr-2 text-lg">{game.rating}</span>
-                    <div className="flex">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <svg
-                          key={i}
-                          className={`h-5 w-5 ${i < Math.floor(game.rating) ? "text-yellow-400" : "text-gray-600"}`}
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-400">
-                    Downloads
-                  </h4>
-                  <p className="text-lg">
-                    {(game.downloads / 1000000).toFixed(1)}M+
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-400">
-                    Platforms
-                  </h4>
-                  <div className="flex gap-2">
-                    {game.platforms.map((platform) => (
-                      <div
-                        key={platform}
-                        className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-800 p-1.5"
-                      >
-                        <Image
-                          src={`/images/play/${platform}.png`}
-                          alt={platform}
-                          width={20}
-                          height={20}
-                        />
+              {/* Game Details Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "Size", value: game.size },
+                  {
+                    label: "Rating",
+                    value: (
+                      <div className="flex items-center">
+                        <span className="mr-2 text-lg">{game.rating}</span>
+                        <div className="flex">
+                          {Array.from({ length: 5 }).map((_, i) => (
+                            <svg
+                              key={i}
+                              className={`h-4 w-4 md:h-5 md:w-5 ${i < Math.floor(game.rating) ? "text-yellow-400" : "text-gray-600"}`}
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                          ))}
+                        </div>
                       </div>
-                    ))}
+                    ),
+                  },
+                  {
+                    label: "Downloads",
+                    value: `${(game.downloads / 1000000).toFixed(1)}M+`,
+                  },
+                  {
+                    label: "Platforms",
+                    value: (
+                      <div className="flex gap-2">
+                        {game.platforms.map((platform) => (
+                          <div
+                            key={platform}
+                            className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-800 p-1 md:h-8 md:w-8"
+                          >
+                            <Image
+                              src={`/images/play/${platform}.png`}
+                              alt={platform}
+                              width={20}
+                              height={20}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ),
+                  },
+                ].map(({ label, value }) => (
+                  <div key={label}>
+                    <h4 className="text-xs font-semibold text-gray-400 md:text-sm">
+                      {label}
+                    </h4>
+                    <div className="text-base md:text-lg">{value}</div>
                   </div>
-                </div>
+                ))}
               </div>
 
-              <div className="mt-8">
-                <h4 className="mb-2 text-sm font-semibold text-gray-400">
+              {/* System Requirements */}
+              <div>
+                <h4 className="mb-2 text-xs font-semibold text-gray-400 md:text-sm">
                   System Requirements
                 </h4>
-                <div className="rounded-lg bg-black/30 p-4">
-                  <div className="mb-2">
-                    <span className="font-semibold">OS:</span> Windows 10 64-bit
-                  </div>
-                  <div className="mb-2">
-                    <span className="font-semibold">Processor:</span> Intel Core
-                    i5-6600K / AMD Ryzen 5 1600
-                  </div>
-                  <div className="mb-2">
-                    <span className="font-semibold">Memory:</span> 8 GB RAM
-                  </div>
-                  <div className="mb-2">
-                    <span className="font-semibold">Graphics:</span> NVIDIA GTX
-                    1030 2GB / AMD Radeon RX 580
-                  </div>
-                  <div>
-                    <span className="font-semibold">Storage:</span> {game.size}{" "}
-                    available space
-                  </div>
+                <div className="rounded-lg bg-black/30 p-3 text-xs md:p-4 md:text-base">
+                  {[
+                    { label: "OS", value: "Windows 10 64-bit" },
+                    {
+                      label: "Processor",
+                      value: "Intel Core i5-6600K / AMD Ryzen 5 1600",
+                    },
+                    { label: "Memory", value: "8 GB RAM" },
+                    {
+                      label: "Graphics",
+                      value: "NVIDIA GTX 1030 2GB / AMD Radeon RX 580",
+                    },
+                    { label: "Storage", value: `${game.size} available space` },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="mb-1">
+                      <span className="font-semibold">{label}: </span>
+                      {value}
+                    </div>
+                  ))}
                 </div>
               </div>
             </motion.div>
 
+            {/* Download Buttons */}
             <motion.div
-              className="mt-8 flex gap-4"
+              className="mt-6 flex gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
               {game.platforms.includes("windows") && (
-                <a href={game.windowsDownload}>
-                  <Button className="flex-1" variant="primary" icon="windows">
+                <a href={game.windowsDownload} className="flex-1">
+                  <button className="w-full rounded-lg bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700">
                     Download for Windows
-                  </Button>
+                  </button>
                 </a>
               )}
 
               {game.platforms.includes("android") && (
-                <a href={game.androidDownload}>
-                  <Button className="flex-1" variant="secondary" icon="android">
+                <a href={game.androidDownload} className="flex-1">
+                  <button className="w-full rounded-lg bg-green-600 px-4 py-2 text-white transition hover:bg-green-700">
                     Download for Android
-                  </Button>
+                  </button>
                 </a>
               )}
             </motion.div>
@@ -516,7 +535,6 @@ const FeaturedGame = ({ game, onClose }) => {
     </motion.div>
   );
 };
-
 // Main component
 const GameDownloads = () => {
   const [filter, setFilter] = useState("all");
@@ -748,7 +766,6 @@ const GameDownloads = () => {
         </div>
       </section>
 
-      {/* Featured game modal */}
       {/* Featured game modal */}
       <AnimatePresence>
         {selectedGame && (

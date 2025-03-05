@@ -83,7 +83,7 @@ const Header = () => {
     <header
       className={`fixed left-0 top-0 z-50 w-full bg-white/10 py-0.5 transition-transform duration-300 dark:bg-black ${
         hideOnScroll ? "-translate-y-full" : "translate-y-0"
-      } ${stickyMenu ? "shadow" : ""}`}
+      } ${stickyMenu ? "shadow " : ""}`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-[12%]">
