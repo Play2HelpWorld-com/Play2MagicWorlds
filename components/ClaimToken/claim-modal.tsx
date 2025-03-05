@@ -35,6 +35,11 @@ import { toast } from "sonner";
 const contractAddress =
   process.env.NEXT_PUBLIC_TOKEN_DISTRIBUTOR_ADDRESS || "0x";
 
+interface ClaimModalProps {
+  isModalOpen: boolean;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 interface ClaimData {
   walletAddress: string;
   tokenType: string;
@@ -45,8 +50,7 @@ interface ClaimData {
 type ModalStep = "input" | "summary" | "claiming" | "status";
 type StatusType = "success" | "error" | "pending" | null;
 
-const ClaimButton = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const ClaimModal = ({ isModalOpen, setIsModalOpen }: ClaimModalProps) => {
   const [userTag, setUserTag] = useState("");
   const [claimData, setClaimData] = useState<ClaimData | null>(null);
   const [modalStep, setModalStep] = useState<ModalStep>("input");
@@ -773,8 +777,6 @@ const ClaimButton = () => {
 
   return (
     <>
-      <button onClick={() => setIsModalOpen(true)}>Claim Tokens</button>
-
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
           <motion.div
@@ -810,4 +812,4 @@ const ClaimButton = () => {
   );
 };
 
-export default ClaimButton;
+export default ClaimModal;
