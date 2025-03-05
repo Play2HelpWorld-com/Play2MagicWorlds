@@ -15,7 +15,7 @@ const Contact = () => {
   });
   const [formState, setFormState] = useState("idle"); // idle, loading, success, error
   const [activeField, setActiveField] = useState(null);
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement>(null);
 
   // Handle form changes
   const handleChange = (e) => {
@@ -40,7 +40,7 @@ const Contact = () => {
       .sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID || "",
         process.env.NEXT_PUBLIC_TEMPLATE_ID || "",
-        formRef.current,
+        formRef.current!,
         process.env.NEXT_PUBLIC_PUBLIC_KEY || "",
       )
       .then(() => {
@@ -79,7 +79,7 @@ const Contact = () => {
       transition: {
         duration: 15,
         repeat: Infinity,
-        repeatType: "reverse",
+        repeatType: "reverse" as const,
       },
     },
   };

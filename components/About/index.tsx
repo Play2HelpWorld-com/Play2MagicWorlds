@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 const About = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Particle animation config
   const particleCount = 30;
@@ -60,7 +60,7 @@ const About = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && videoRef.current) {
-          videoRef.current.play();
+          videoRef.current?.play();
           setIsPlaying(true);
         } else if (videoRef.current) {
           videoRef.current.pause();
@@ -177,7 +177,7 @@ const About = () => {
                       whileTap={{ scale: 0.95 }}
                       className="flex h-16 w-16 items-center justify-center rounded-full bg-white bg-opacity-25 backdrop-blur-sm"
                       onClick={() => {
-                        videoRef.current.play();
+                        videoRef.current?.play();
                         setIsPlaying(true);
                       }}
                     >
