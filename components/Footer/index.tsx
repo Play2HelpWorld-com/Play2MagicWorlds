@@ -281,7 +281,7 @@ const Footer = () => {
                 ],
               },
               {
-                title: "Support",
+                title: "Networks",
                 links: [
                   {
                     name: "Customer Service",
@@ -291,17 +291,6 @@ const Footer = () => {
                     name: "Teams",
                     url: "https://www.linkedin.com/company/magic-worlds",
                   },
-                  { name: "FAQs", url: "#" },
-                  { name: "About", url: "/docs" },
-                  {
-                    name: "Check Updates",
-                    url: "https://github.com/orgs/TheMagicWorlds",
-                  },
-                ],
-              },
-              {
-                title: "Resources",
-                links: [
                   {
                     name: "Code",
                     url: "https://github.com/orgs/TheMagicWorlds",
@@ -320,7 +309,40 @@ const Footer = () => {
                   },
                   {
                     name: "White Papers",
-                    url: "https://helix-labs-gmbh.notion.site/Magic-Worlds-Blockchain-Tokenomics-Whitepaper-1a3f1e882525807392a6c0c34651efb9",
+                    url: "https://helix-labs-gmbh.notion.site/Magic-Worlds-Layer-2-Whitepaper-1adf1e88252580baa4e9cb08def48ba7?pvs=4",
+                  },
+                ],
+              },
+              {
+                title: "Join Us",
+                links: [
+                  {
+                    name: "Memes",
+                    url: "https://www.tiktok.com/@magicworldsonline",
+                  },
+                  {
+                    name: "Gamer Tips",
+                    url: "https://discord.com/invite/NcNSaTVNdn",
+                  },
+                  {
+                    name: "Blogs",
+                    url: "https://mauricebigmoflynn.wordpress.com/",
+                  },
+                  {
+                    name: "Open Source",
+                    url: "https://www.reddit.com/user/MagicWorlds_/",
+                  },
+                  {
+                    name: "Gamer Videos",
+                    url: "https://www.twitch.tv/magicworldsonline",
+                  },
+                  {
+                    name: "Influencers",
+                    url: "https://www.instagram.com/magikworlds/",
+                  },
+                  {
+                    name: "Mobile Game Link",
+                    url: "https://drive.google.com/file/d/141f8EDsJhFywxbtJ0KfJUH8HRarf3P4j/view?usp=drive_link",
                   },
                 ],
               },
