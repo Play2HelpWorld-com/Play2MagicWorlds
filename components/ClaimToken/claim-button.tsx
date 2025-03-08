@@ -773,7 +773,12 @@ const ClaimButton = () => {
 
   return (
     <>
-      <button onClick={() => setIsModalOpen(true)}>Claim Tokens</button>
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="relative overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-8 py-4 font-bold text-white transition-all duration-300 hover:bg-purple-600"
+      >
+        Claim Tokens
+      </button>
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">

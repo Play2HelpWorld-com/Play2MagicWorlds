@@ -141,7 +141,11 @@ const Footer = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: [0, 0.5, 0.2],
-      transition: { duration: 3, repeat: Infinity, repeatType: "reverse" },
+      transition: {
+        duration: 3,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+      },
     },
   };
 
@@ -149,7 +153,11 @@ const Footer = () => {
     hidden: { scale: 1 },
     visible: {
       scale: [1, 1.05, 1],
-      transition: { duration: 2, repeat: Infinity, repeatType: "reverse" },
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+      },
     },
   };
 
@@ -252,10 +260,10 @@ const Footer = () => {
                   Contact
                 </p>
                 <a
-                  href="mailto:mflynn1999@gmail.com"
+                  href="mailto:magicworldsonline2025@gmail.com"
                   className="hover:text-gaming inline-block text-white transition-colors duration-300"
                 >
-                  mflynn1999@gmail.com
+                  magicworldsonline2025@gmail.com
                 </a>
               </motion.div>
             </motion.div>
@@ -273,7 +281,7 @@ const Footer = () => {
                 ],
               },
               {
-                title: "Support",
+                title: "Networks",
                 links: [
                   {
                     name: "Customer Service",
@@ -283,17 +291,6 @@ const Footer = () => {
                     name: "Teams",
                     url: "https://www.linkedin.com/company/magic-worlds",
                   },
-                  { name: "FAQs", url: "#" },
-                  { name: "About", url: "/docs" },
-                  {
-                    name: "Check Updates",
-                    url: "https://github.com/orgs/TheMagicWorlds",
-                  },
-                ],
-              },
-              {
-                title: "Resources",
-                links: [
                   {
                     name: "Code",
                     url: "https://github.com/orgs/TheMagicWorlds",
@@ -312,7 +309,40 @@ const Footer = () => {
                   },
                   {
                     name: "White Papers",
-                    url: "https://helix-labs-gmbh.notion.site/Magic-Worlds-Blockchain-Tokenomics-Whitepaper-1a3f1e882525807392a6c0c34651efb9",
+                    url: "https://helix-labs-gmbh.notion.site/Magic-Worlds-Layer-2-Whitepaper-1adf1e88252580baa4e9cb08def48ba7?pvs=4",
+                  },
+                ],
+              },
+              {
+                title: "Join Us",
+                links: [
+                  {
+                    name: "Memes",
+                    url: "https://www.tiktok.com/@magicworldsonline",
+                  },
+                  {
+                    name: "Gamer Tips",
+                    url: "https://discord.com/invite/NcNSaTVNdn",
+                  },
+                  {
+                    name: "Blogs",
+                    url: "https://mauricebigmoflynn.wordpress.com/",
+                  },
+                  {
+                    name: "Open Source",
+                    url: "https://www.reddit.com/user/MagicWorlds_/",
+                  },
+                  {
+                    name: "Gamer Videos",
+                    url: "https://www.twitch.tv/magicworldsonline",
+                  },
+                  {
+                    name: "Influencers",
+                    url: "https://www.instagram.com/magikworlds/",
+                  },
+                  {
+                    name: "Mobile Game Link",
+                    url: "https://drive.google.com/file/d/141f8EDsJhFywxbtJ0KfJUH8HRarf3P4j/view?usp=drive_link",
                   },
                 ],
               },
@@ -436,7 +466,7 @@ const Footer = () => {
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                v3.4.2
+                v1.0.1
               </motion.span>
             </motion.p>
           </motion.div>

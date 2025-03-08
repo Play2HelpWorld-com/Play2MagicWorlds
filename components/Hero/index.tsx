@@ -233,25 +233,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 1 }}
               className="mt-10 flex flex-wrap gap-4"
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onMouseEnter={() => setHoverGlow(true)}
-                onMouseLeave={() => setHoverGlow(false)}
-                className="relative overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-8 py-4 font-bold text-white transition-all duration-300"
-              >
-                {hoverGlow && (
-                  <motion.span
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 2, opacity: 0.3 }}
-                    transition={{ duration: 0.5 }}
-                    className="absolute inset-0 z-0 rounded-full bg-white"
-                  />
-                )}
-                <span className="relative z-10 flex items-center">
-                  <ClaimButton />
-                </span>
-              </motion.div>
+              <ClaimButton />
 
               <motion.button
                 whileHover={{ scale: 1.05 }}

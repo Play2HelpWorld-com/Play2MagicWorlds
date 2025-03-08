@@ -100,26 +100,35 @@ const EpicGamingShowcase: React.FC = () => {
   // Generate video data
   useEffect(() => {
     const gameTitles = [
-      { title: "Elden Ring: Final Boss Perfect Run", genre: "Action RPG" },
+      { title: "Learning World: AI Tutor Mastery", genre: "Educational RPG" },
+      { title: "Sport World: Extreme Soccer Showdown", genre: "Sports" },
       {
-        title: "Cyberpunk 2077: Night City Stealth Mission",
-        genre: "Action RPG",
+        title: "AI World: Cybernetic Battle Arena",
+        genre: "Sci-Fi Strategy",
       },
-      { title: "Forza Horizon 5: Ultimate Drift Challenge", genre: "Racing" },
+      { title: "Music World: Ultimate DJ Remix Challenge", genre: "Rhythm" },
+      { title: "Farm World: Epic Harvest Season", genre: "Simulation" },
       {
-        title: "God of War: Ragnarök Boss Marathon",
-        genre: "Action Adventure",
+        title: "Magic Worlds: The Grand Sorcerer's Quest",
+        genre: "Fantasy RPG",
       },
-      { title: "Valorant: Pro Player Ace Compilation", genre: "FPS" },
-      { title: "League of Legends: World Championship Finals", genre: "MOBA" },
-      { title: "Apex Legends: 20 Kill Solo Victory", genre: "Battle Royale" },
-      { title: "Starfield: Unexplored Planet Discovery", genre: "Space RPG" },
-      { title: "Baldur's Gate 3: Impossible Choices", genre: "RPG" },
-      { title: "Call of Duty: Warzone Best Plays", genre: "FPS" },
-      { title: "Final Fantasy XVI: Ultimate Summon Showcase", genre: "JRPG" },
       {
-        title: "Hellblade 2: Senua's Sacrifice Walkthrough",
-        genre: "Action Adventure",
+        title: "Space World: Alien Galaxy Exploration",
+        genre: "Sci-Fi Adventure",
+      },
+      { title: "War World: Battle of the Titans", genre: "FPS" },
+      { title: "Racing World: Hyperdrive Grand Prix", genre: "Racing" },
+      { title: "Survival World: Island Escape Challenge", genre: "Survival" },
+      { title: "AI World: Sentient Machine Revolution", genre: "Sci-Fi RPG" },
+      { title: "Music World: Battle of the Bands", genre: "Rhythm" },
+      {
+        title: "Learning World: History's Greatest Mysteries",
+        genre: "Educational",
+      },
+      { title: "Farm World: The Great Animal Rescue", genre: "Simulation" },
+      {
+        title: "Magic Worlds: Wizard's Tower Defense",
+        genre: "Tower Defense",
       },
     ];
 
@@ -546,15 +555,17 @@ const EpicGamingShowcase: React.FC = () => {
   // Categories for filtering
   const categories = [
     "All",
-    "Action RPG",
+    "Fantasy RPG",
+    "Educational",
+    "Sports",
+    "Sci-Fi Strategy",
+    "Rhythm",
+    "Simulation",
+    "Adventure",
     "FPS",
     "Racing",
-    "MOBA",
-    "Battle Royale",
-    "JRPG",
-    "Action Adventure",
-    "Space RPG",
-    "RPG",
+    "Survival",
+    "Tower Defense",
   ];
 
   // Calculate progress percentage safely

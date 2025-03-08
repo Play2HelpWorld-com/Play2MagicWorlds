@@ -315,7 +315,7 @@ const FAQ = () => {
             </p>
 
             <motion.a
-              href="#"
+              href="https://discord.com/invite/NcNSaTVNdn"
               className="group relative inline-flex max-w-fit items-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 font-medium text-white"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}

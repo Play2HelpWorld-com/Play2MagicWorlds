@@ -15,8 +15,8 @@ const Feature = () => {
     height: 0,
   });
   const [isMounted, setIsMounted] = useState(false);
-  const canvasRef = useRef(null);
-  const animationFrameId = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationFrameId = useRef<number | null>(null);
 
   // Intersection observer for section animation
   const [sectionRef, inView] = useInView({
@@ -73,13 +73,40 @@ const Feature = () => {
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    const hexagons = [];
-    const connectionLines = [];
+    if (!ctx) return;
 
-    // Set canvas dimensions
+    type Hexagon = {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      opacity: number;
+      hue: number;
+      pulseSpeed: number;
+      pulseOffset: number;
+      rotationSpeed: number;
+      rotation: number;
+    };
+
+    type ConnectionLine = {
+      x1: number;
+      y1: number;
+      x2: number;
+      y2: number;
+      opacity: number;
+      hue: number;
+    };
+
+    const hexagons: Hexagon[] = [];
+    const connectionLines: ConnectionLine[] = [];
+
+    // Set canvas dimensions dynamically
     const setCanvasDimensions = () => {
       canvas.width = window.innerWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
+      canvas.height = canvas.parentElement
+        ? canvas.parentElement.offsetHeight
+        : window.innerHeight;
     };
 
     // Initialize hexagons
@@ -87,7 +114,6 @@ const Feature = () => {
       hexagons.length = 0;
       connectionLines.length = 0;
 
-      // Create grid of hexagons
       const spacing = 180;
       const cols = Math.ceil(canvas.width / spacing) + 2;
       const rows = Math.ceil(canvas.height / spacing) + 2;
@@ -107,24 +133,22 @@ const Feature = () => {
             pulseSpeed: 0.02 + Math.random() * 0.03,
             pulseOffset: Math.random() * Math.PI * 2,
             rotationSpeed: 0.001 - Math.random() * 0.002,
+            rotation: 0, // Ensure rotation is defined
           });
         }
       }
     };
 
-    // Draw hexagon
-    const drawHexagon = (x, y, size, opacity, hue, rotation = 0) => {
+    // Draw a hexagon
+    const drawHexagon = (x, y, size, opacity, hue, rotation) => {
       ctx.beginPath();
       for (let i = 0; i < 6; i++) {
         const angle = rotation + (Math.PI / 3) * i;
         const hX = x + size * Math.cos(angle);
         const hY = y + size * Math.sin(angle);
 
-        if (i === 0) {
-          ctx.moveTo(hX, hY);
-        } else {
-          ctx.lineTo(hX, hY);
-        }
+        if (i === 0) ctx.moveTo(hX, hY);
+        else ctx.lineTo(hX, hY);
       }
       ctx.closePath();
       ctx.strokeStyle = `hsla(${hue}, 80%, 50%, ${opacity})`;
@@ -136,7 +160,7 @@ const Feature = () => {
       ctx.shadowColor = `hsla(${hue}, 80%, 60%, ${opacity * 0.5})`;
     };
 
-    // Connect nearby hexagons with lines
+    // Connect nearby hexagons
     const connectHexagons = () => {
       connectionLines.length = 0;
 
@@ -166,7 +190,7 @@ const Feature = () => {
       }
     };
 
-    // Calculate mouse influence
+    // Mouse influence function
     const mouseInfluence = (x, y) => {
       const dx = mousePosition.x - x;
       const dy = mousePosition.y - y - scrollY;
@@ -180,7 +204,6 @@ const Feature = () => {
           y: (dy / distance) * force,
         };
       }
-
       return { x: 0, y: 0 };
     };
 
@@ -188,7 +211,7 @@ const Feature = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw connection lines
+      // Draw connection lines
       ctx.shadowBlur = 0;
       connectionLines.forEach((line) => {
         ctx.beginPath();
@@ -201,15 +224,14 @@ const Feature = () => {
 
       // Update and draw hexagons
       hexagons.forEach((hexagon) => {
-        // Calculate pulse
         const pulse = Math.sin(
           Date.now() * hexagon.pulseSpeed + hexagon.pulseOffset,
         );
         const pulsedSize = hexagon.size * (1 + pulse * 0.2);
         const pulsedOpacity = hexagon.opacity * (0.8 + pulse * 0.2);
 
-        // Apply rotation
-        hexagon.rotation = (hexagon.rotation || 0) + hexagon.rotationSpeed;
+        // Update rotation
+        hexagon.rotation += hexagon.rotationSpeed;
 
         // Apply mouse influence
         const influence = mouseInfluence(hexagon.x, hexagon.y);
@@ -218,13 +240,12 @@ const Feature = () => {
         hexagon.x += hexagon.speedX + influence.x;
         hexagon.y += hexagon.speedY + influence.y;
 
-        // Wrap around edges
-        if (hexagon.x < -100) hexagon.x = canvas.width + 100;
-        if (hexagon.x > canvas.width + 100) hexagon.x = -100;
-        if (hexagon.y < -100) hexagon.y = canvas.height + 100;
-        if (hexagon.y > canvas.height + 100) hexagon.y = -100;
+        // Ensure smooth wrapping at edges
+        if (hexagon.x < -50) hexagon.x = canvas.width + 50;
+        if (hexagon.x > canvas.width + 50) hexagon.x = -50;
+        if (hexagon.y < -50) hexagon.y = canvas.height + 50;
+        if (hexagon.y > canvas.height + 50) hexagon.y = -50;
 
-        // Draw hexagon
         drawHexagon(
           hexagon.x,
           hexagon.y,
@@ -246,7 +267,7 @@ const Feature = () => {
     initHexagons();
     animate();
 
-    // Handle resize
+    // Resize event handler
     const handleResize = () => {
       setCanvasDimensions();
       initHexagons();
@@ -478,7 +499,16 @@ const GameFeatureCard = ({ feature, index, inView }) => {
 
       {/* Animated border effect */}
       <motion.div
-        variants={pulseVariants}
+        variants={{
+          animate: {
+            opacity: [0.5, 1, 0.5],
+            transition: {
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse",
+            },
+          },
+        }}
         animate="animate"
         className="pointer-events-none absolute inset-0 rounded-xl"
         style={{

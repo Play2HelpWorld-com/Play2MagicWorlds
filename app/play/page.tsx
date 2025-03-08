@@ -4,8 +4,8 @@ import Game from "@/components/Games";
 import GameDownloads from "@/components/Play";
 
 export const metadata: Metadata = {
-  title: "Play Page - Games with Magic Worlds  | Play for Free Donation",
-  description: "This is built by Magic Worlds",
+  title: "Play Page - Download our Games",
+  description: "Built by MagicWorlds",
   // other metadata
 };
 

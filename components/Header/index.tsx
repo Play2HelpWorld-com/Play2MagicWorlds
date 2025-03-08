@@ -83,7 +83,7 @@ const Header = () => {
     <header
       className={`fixed left-0 top-0 z-50 w-full bg-white/10 py-0.5 transition-transform duration-300 dark:bg-black ${
         hideOnScroll ? "-translate-y-full" : "translate-y-0"
-      } ${stickyMenu ? "shadow" : ""}`}
+      } ${stickyMenu ? "shadow " : ""}`}
     >
       <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-[12%]">
@@ -153,7 +153,7 @@ const Header = () => {
           }`}
         >
           <nav>
-            <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+            <ul className="flex flex-col gap-5 font-bold xl:flex-row xl:items-center xl:gap-10">
               {menuData.map((menuItem, key) => (
                 <li
                   onClick={(e) => handleLinkClick(e, menuItem)}
@@ -209,14 +209,14 @@ const Header = () => {
           </nav>
 
           <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            {/* <ThemeToggler /> */}
             {/* <ProfileModal navOpen={navigationOpen} setNavopen = {setNavigationOpen}/> */}
             <Link
               href="/support"
-              className="hover:bg-primary-dark rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-2 text-white transition-colors"
+              className="hover:bg-primary-dark rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-2 font-semibold text-white transition-colors"
             >
               Contact Us
             </Link>
+            <ThemeToggler />
           </div>
         </div>
       </div>

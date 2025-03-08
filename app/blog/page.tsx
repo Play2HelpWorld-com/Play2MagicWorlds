@@ -3,8 +3,8 @@ import BlogItem from "@/components/Blog/BlogItem";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Charities Page - Games with magic Worlds ",
-  description: "This is Blog page for Solid Pro",
+  title: "Charities Page - Games with Magic Worlds ",
+  description: "Built by MagicWorlds",
   // other metadata
 };
 

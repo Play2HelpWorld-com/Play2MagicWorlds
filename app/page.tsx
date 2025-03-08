@@ -13,10 +13,12 @@ import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 import GameSection from "@/components/Games/gameSection";
+import ClaimTokenSection from "@/components/ClaimToken";
+import ClaimButton from "@/components/ClaimToken/claim-button";
 
 export const metadata: Metadata = {
-  title: "Games with magic Worlds | Play for Free Donation",
-  description: "This is built by MagicWorld",
+  title: "Magic Worlds",
+  description: "Discover the best games and apps in the Magic Worlds ecosystem",
   // other metadata
 };
 
