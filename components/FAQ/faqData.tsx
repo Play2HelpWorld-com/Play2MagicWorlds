@@ -1,21 +1,36 @@
 import { FAQ } from "@/types/faq";
 
-const faqData: FAQ[] = [
+const gamingFaqData: FAQ[] = [
   {
     id: 1,
-    quest: "What is the mission of Games with magic Worlds?",
-    ans: "Our mission is to provide a free gaming platform that allows you to play games for free and donate to charity. Play games and help people in need.",
+    question: "How do I start playing Magic Worlds?",
+    answer:
+      "To begin, launch Magic Worlds, enter your spaceship, and select a world by clicking the plus sign (+). You will be transported there automatically. Complete missions, earn rewards, and explore unique experiences.",
   },
   {
     id: 2,
-    quest: "How can I donate to charity?",
-    ans: "Sign up for free and play games. Earn rewards and donate to charity. Play games and help people in need.",
+    question: "What is the Play-to-Earn (P2E) system in Magic Worlds?",
+    answer:
+      "Magic Worlds features Play2Earn (P2E) mechanics, allowing players to earn real-world rewards by completing missions. Key programs include Play2Work, Play2Help, Play2Health, Play2Learn, and Play2LiveWell.",
   },
   {
     id: 3,
-    quest: "What is game points?",
-    ans: "Game points are rewards that you earn by playing games. Use game points to donate to charity and help people in need.",
+    question: "Which worlds can I explore in Magic Worlds?",
+    answer:
+      "You can visit various worlds, including Edu World for AI-powered learning, Farm World for strategic farming, Music World for virtual concerts, City World for leadership challenges, and more.",
+  },
+  {
+    id: 4,
+    question: "How does blockchain integration work in Magic Worlds?",
+    answer:
+      "Magic Worlds utilizes blockchain for secure digital ownership, transparent transactions, and fair reward distribution, ensuring a decentralized and trustworthy gaming experience.",
+  },
+  {
+    id: 5,
+    question: "Can I compete against other players in Magic Worlds?",
+    answer:
+      "Yes! You can compete in high-speed races in Car World, strategic farming battles in Farm World, multiplayer tournaments in Sport World, and various challenges in Gamers World.",
   },
 ];
 
-export default faqData;
+export default gamingFaqData;

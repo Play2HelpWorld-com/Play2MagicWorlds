@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import gamingFaqData from "./faqData";
 
 // Custom FAQItem component with gaming animations
 const FAQItem = ({ faq, isActive, toggleFaq }) => {
@@ -176,40 +177,6 @@ const TypewriterText = ({ text }) => {
     </div>
   );
 };
-
-// Sample FAQ data
-const gamingFaqData = [
-  {
-    id: 1,
-    question: "What system requirements do I need to play?",
-    answer:
-      "Our game requires a minimum of 8GB RAM, GTX 1060 or equivalent GPU, and an i5 processor or better. For the optimal experience, we recommend 16GB RAM, RTX 3060 or better, and an i7 processor with SSD storage.",
-  },
-  {
-    id: 2,
-    question: "How do I access the special DLC content?",
-    answer:
-      "After purchasing the DLC from our store, restart the game client. The new content will automatically download and integrate. Access it from the 'DLC' tab in the main menu or through the relevant in-game locations marked with the DLC icon.",
-  },
-  {
-    id: 3,
-    question: "When is the next major update coming?",
-    answer:
-      "Our next major update (v2.5) is scheduled for release next month. It will include a new playable character, 5 additional story missions, weapon balancing, and quality-of-life improvements based on community feedback.",
-  },
-  {
-    id: 4,
-    question: "How do I report bugs or technical issues?",
-    answer:
-      "You can report bugs through our dedicated support portal at support.ourgame.com or via the in-game menu under Settings > Help > Report Bug. Please include screenshots and your system specifications to help us resolve the issue faster.",
-  },
-  {
-    id: 5,
-    question: "Are there plans for cross-platform multiplayer?",
-    answer:
-      "Yes! Cross-platform play between PC and consoles is currently in beta testing and scheduled for full release in our next major update. Mobile cross-play compatibility is still in development and will be announced in the future.",
-  },
-];
 
 // Main FAQ Component
 const FAQ = () => {
