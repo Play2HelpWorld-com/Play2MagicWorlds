@@ -399,7 +399,7 @@ const FAQ = () => {
               {/* Terminal footer with blinking cursor */}
               <div className="border-t border-slate-700 bg-slate-800/80 px-4 py-3">
                 <div className="flex items-center text-sm text-slate-400">
-                  <span>player@support:~$</span>
+                  <span>magicworldsonline2025@gmail.com:~$</span>
                   <motion.span
                     className="ml-1 h-4 w-2 bg-slate-400"
                     animate={{ opacity: [1, 0, 1] }}
