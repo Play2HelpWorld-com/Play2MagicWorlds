@@ -246,7 +246,7 @@ export default function Docs() {
             <div className="flex items-center space-x-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-500 p-6 shadow-2xl">
               <Gamepad2 className="h-12 w-12 text-white" />
               <h1 className="bg-gradient-to-r from-white to-purple-200 bg-clip-text text-4xl font-bold tracking-tight text-transparent">
-                MagicWorlds Docs
+                Journey With Magic Worlds
               </h1>
             </div>
           </Card3D>
