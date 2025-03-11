@@ -131,12 +131,12 @@ const About = () => {
             </motion.div>
             <h1 className="mb-6 text-4xl font-extrabold leading-tight text-white md:text-5xl lg:text-6xl">
               <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
-                Games with Magic Worlds
+                Magic Worlds
               </span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-gray-300">
-              Step into a universe where fantasy meets reality. Play, earn
-              rewards, and transform your gaming passion into tangible
+              Embark on a journey through Magic Worlds where adventure meets
+              rewards, and every quest brings you closer to real-world
               treasures.
             </p>
           </motion.div>
@@ -208,9 +208,12 @@ const About = () => {
                   <span className="text-purple-400">Begins Here</span>
                 </h2>
                 <p className="text-gray-300">
-                  Immerse yourself in a revolutionary gaming platform where
-                  every quest completed, every challenge conquered, and every
-                  level mastered brings you closer to real-world rewards.
+                  Welcome to Magic Worlds, the ultimate virtual universe where
+                  adventure meets rewards. Explore diverse realms, engage in
+                  thrilling activities, and earn tokens as you journey through
+                  this immersive experience. Whether you're a seasoned
+                  adventurer or a newcomer, Magic Worlds offers something for
+                  everyone.
                 </p>
               </motion.div>
 
@@ -227,21 +230,21 @@ const About = () => {
                   },
                   {
                     icon: "✧",
-                    title: "Conquer & Collect",
+                    title: "Diverse Digital Realms",
                     description:
-                      "Complete quests and challenges to earn magical tokens",
+                      "Discover a variety of unique worlds, each with its own challenges and rewards.",
                   },
                   {
                     icon: "⚔️",
-                    title: "Epic Tournaments",
+                    title: "Thrilling Activities",
                     description:
-                      "Compete against players worldwide for legendary prizes",
+                      "From quests to battles, there’s always something exciting to do in Magic Worlds.",
                   },
                   {
                     icon: "💰",
-                    title: "Real Rewards",
+                    title: "Token Rewards",
                     description:
-                      "Convert your in-game achievements into real-world treasures",
+                      "Earn tokens as you play, which can be used to unlock new features or traded with other players.",
                   },
                 ].map((feature, index) => (
                   <motion.div
@@ -848,7 +851,7 @@ const About = () => {
               >
                 Ready to{" "}
                 <span className="bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
-                  Play & Earn?
+                  Start Your Adventure?
                 </span>
               </motion.h2>
               <motion.p
