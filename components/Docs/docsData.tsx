@@ -1480,7 +1480,7 @@ export const docsData: Record<string, DocSection> = {
               </svg>
               <strong className="text-blue-300">Facebook:</strong>
               <a
-                href="#"
+                href="https://www.facebook.com/MagikWorlds"
                 className="text-purple-300 hover:text-purple-200 hover:underline"
               >
                 Magic Worlds
@@ -1499,7 +1499,7 @@ export const docsData: Record<string, DocSection> = {
               </svg>
               <strong className="text-blue-300">Twitter:</strong>
               <a
-                href="#"
+                href="https://x.com/magicworlds3"
                 className="text-purple-300 hover:text-purple-200 hover:underline"
               >
                 @magicworlds3
@@ -1519,7 +1519,7 @@ export const docsData: Record<string, DocSection> = {
               </svg>
               <strong className="text-blue-300">YouTube:</strong>
               <a
-                href="#"
+                href="https://youtube.com/@magicworldstv"
                 className="text-purple-300 hover:text-purple-200 hover:underline"
               >
                 Magic Worlds TV
@@ -1543,32 +1543,10 @@ export const docsData: Record<string, DocSection> = {
               </svg>
               <strong className="text-blue-300">Reddit:</strong>
               <a
-                href="#"
+                href="https://www.reddit.com/user/MagicWorlds_/"
                 className="text-purple-300 hover:text-purple-200 hover:underline"
               >
-                u/Play2World
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-blue-400"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M21.5 7.5l-2.5 10h-3l2.5-10h3z"></path>
-                <path d="M9.5 7.5l-2.5 10h-3l2.5-10h3z"></path>
-                <path d="M4.5 7.5h11l1 4h-12z"></path>
-                <path d="M9.5 15.5l-1-4h9l-1 4h-7z"></path>
-              </svg>
-              <strong className="text-blue-300">Telegram:</strong>
-              <a
-                href="#"
-                className="text-purple-300 hover:text-purple-200 hover:underline"
-              >
-                @Play2World
+                u/MagicWorlds_
               </a>
             </li>
             <li className="flex items-center gap-2">
@@ -1586,7 +1564,49 @@ export const docsData: Record<string, DocSection> = {
               </svg>
               <strong className="text-blue-300">LinkedIn:</strong>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/magic-worlds"
+                className="text-purple-300 hover:text-purple-200 hover:underline"
+              >
+                Magic Worlds
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 text-blue-400"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <strong className="text-blue-300">Discord:</strong>
+              <a
+                href="https://discord.com/invite/NcNSaTVNdn"
+                className="text-purple-300 hover:text-purple-200 hover:underline"
+              >
+                Magic Worlds
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 text-blue-400"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <strong className="text-blue-300">Twitch:</strong>
+              <a
+                href="https://www.twitch.tv/magicworldsonline"
                 className="text-purple-300 hover:text-purple-200 hover:underline"
               >
                 Magic Worlds
