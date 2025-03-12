@@ -348,7 +348,7 @@ const Hero = () => {
                   className="relative h-full w-full"
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative h-[350px] w-[280px] overflow-hidden rounded-2xl bg-gradient-to-b from-indigo-900/80 via-purple-900/80 to-pink-900/80 p-1 shadow-2xl backdrop-blur-sm">
+                    <div className="relative h-[350px] w-[280px] overflow-hidden rounded-2xl bg-gradient-to-b from-indigo-900/20 via-indigo-800/10 to-indigo-950/50 p-1 shadow-2xl backdrop-blur-sm">
                       <div className="h-full w-full rounded-xl bg-black/40 p-4">
                         {/* <div className="mb-2 flex items-center justify-between">
                           <span className="rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-sm font-bold text-transparent">
@@ -405,12 +405,14 @@ const Hero = () => {
 
                         <div className="mt-5">
                           <div className="mb-1 flex justify-between text-xs">
-                            <span className="text-red-400">ACHIEVEMENTS</span>
-                            <span className="text-red-400">
+                            <span className="text-indigo-400">
+                              ACHIEVEMENTS
+                            </span>
+                            <span className="text-indigo-400">
                               {gameCharacters[activeCharacter].progress}/100
                             </span>
                           </div>
-                          <div className="h-4 w-full overflow-hidden rounded-full bg-gray-700">
+                          <div className="mb-2 mt-1 h-2 w-full overflow-hidden rounded-full bg-gray-700">
                             <motion.div
                               className="h-full bg-gradient-to-r from-red-400 to-red-600"
                               initial={{ width: "0%" }}
@@ -425,7 +427,7 @@ const Hero = () => {
                         <motion.button
                           whileHover={{ scale: 1.03 }}
                           whileTap={{ scale: 0.97 }}
-                          className="mt-4 w-full rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-2 text-sm font-bold text-white"
+                          className="mt-4 w-full rounded-lg bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 py-2 text-sm font-bold text-white"
                         >
                           {gameCharacters[activeCharacter].name} NOW
                         </motion.button>
