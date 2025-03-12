@@ -7,8 +7,10 @@ const ThemeToggler = () => {
   // set default theme to dark
 
   useEffect(() => {
-    setTheme("dark");
-  }, []);
+    if (theme === "light") {
+      setTheme("dark");
+    } else setTheme("dark");
+  }, [setTheme, theme]);
 
   return (
     <button
