@@ -216,7 +216,7 @@ const Header = () => {
             >
               Contact Us
             </Link>
-            <ThemeToggler />
+            {/* <ThemeToggler /> */}
           </div>
         </div>
       </div>
