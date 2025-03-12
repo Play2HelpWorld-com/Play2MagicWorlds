@@ -157,7 +157,7 @@ const Hero = () => {
   }, [gameCharacters.length]);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-black via-purple-900/70  to-black">
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-black via-indigo-900/40 to-black pt-0 sm:pt-16">
       {/* Animated background particles */}
       <canvas ref={particlesRef} className="absolute inset-0 z-0 opacity-50" />
 
@@ -169,7 +169,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 0.5, y: 0 }}
         transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute left-10 top-1/4 h-24 w-24 rotate-45 rounded bg-gradient-to-r from-cyan-500 to-purple-500 blur-xl"
+        className="absolute left-10 top-1/4 h-24 w-24 rotate-45 rounded bg-gradient-to-r from-cyan-500/10 to-indigo-500/50 blur-xl"
       />
 
       <motion.div
@@ -181,7 +181,7 @@ const Hero = () => {
           repeatType: "reverse",
           delay: 0.5,
         }}
-        className="absolute right-20 top-1/3 h-32 w-32 rounded-full bg-gradient-to-r from-pink-500 to-blue-500 blur-xl"
+        className="absolute right-20 top-1/3 h-32 w-32 rounded-full bg-gradient-to-r from-indigo-500/50 to-sky-500/10 blur-xl"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
@@ -197,21 +197,22 @@ const Hero = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="inline-block rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text px-4 py-1 text-transparent"
+              className="inline-block rounded-lg bg-gradient-to-r from-indigo-500/90 via-purple-500/85 to-pink-500/90 bg-clip-text px-4 py-1 text-transparent"
             >
-              {/* <span className="text-lg font-bold tracking-wider">
-                PLAY · EARN · GIVE
-              </span> */}
+              <span className="text-lg font-bold tracking-wider">
+                A NEW JOURNEY
+              </span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-4 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-5xl font-extrabold leading-tight tracking-tighter text-transparent sm:text-6xl lg:text-7xl"
+              className="mt-4 bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-4xl font-extrabold leading-tight tracking-tighter text-transparent sm:text-5xl"
+              style={{ fontFamily: "'Oswald', sans-serif" }}
             >
               MAGIC
-              <span className="text-neon-blue drop-shadow-glow block">
+              <span className="text-neon-blue drop-shadow-glow bg-gradient-to-r from-cyan-300 via-white to-purple-300 bg-clip-text text-transparent">
                 WORLDS
               </span>
             </motion.h1>
@@ -220,6 +221,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
+              style={{ fontFamily: "'Press Start 2P', cursive" }}
               className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-300"
             >
               Magic Worlds – Love, Laugh, Learn, Lucrative. Welcome to Magic
@@ -238,7 +240,7 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="rounded-full border-2 border-purple-500 bg-transparent px-8 py-4 font-bold text-white transition-all duration-300 hover:bg-purple-900/30"
+                className="via-transparentcto-indigo-600/20 rounded-3xl border-2 border-indigo-700 bg-gradient-to-r from-indigo-500/10 px-8 py-4 font-bold text-white transition-all duration-300 hover:bg-indigo-900/30"
               >
                 EXPLORE WORLDS
               </motion.button>
@@ -349,7 +351,7 @@ const Hero = () => {
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative h-[350px] w-[280px] overflow-hidden rounded-2xl bg-gradient-to-b from-indigo-900/20 via-indigo-800/10 to-indigo-950/50 p-1 shadow-2xl backdrop-blur-sm">
-                      <div className="h-full w-full rounded-xl bg-black/40 p-4">
+                      <div className="h-full w-full rounded-xl bg-transparent p-4">
                         {/* <div className="mb-2 flex items-center justify-between">
                           <span className="rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-sm font-bold text-transparent">
                             LEGENDARY
@@ -367,7 +369,7 @@ const Hero = () => {
                         </div> */}
 
                         <div className="relative h-[200px] w-full overflow-hidden rounded-lg">
-                          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 to-transparent"></div>
+                          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 to-transparent shadow-xl"></div>
                           <Image
                             src={gameCharacters[activeCharacter].src}
                             alt={gameCharacters[activeCharacter].name}

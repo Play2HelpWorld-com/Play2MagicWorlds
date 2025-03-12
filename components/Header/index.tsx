@@ -212,7 +212,7 @@ const Header = () => {
             {/* <ProfileModal navOpen={navigationOpen} setNavopen = {setNavigationOpen}/> */}
             <Link
               href="/support"
-              className="hover:bg-primary-dark rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-4 py-2 font-semibold text-white transition-colors"
+              className="hover:bg-primary-dark rounded-lg bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 px-4 py-2 font-semibold text-white transition-colors"
             >
               Contact Us
             </Link>

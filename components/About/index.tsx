@@ -123,7 +123,7 @@ const About = () => {
             <motion.div
               variants={glowVariant}
               animate="glow"
-              className="mb-5 inline-block rounded-full bg-gradient-to-r from-purple-600 to-blue-500 px-6 py-2"
+              className="mb-5 inline-block rounded-full bg-gradient-to-r from-indigo-600 to-blue-500 px-6 py-2"
             >
               <span className="font-bold uppercase tracking-wider text-white">
                 Enter The Realm
