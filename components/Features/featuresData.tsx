@@ -6,7 +6,7 @@ const featuresData: Feature[] = [
     icon: "/images/icon/join.png",
     title: "Join Now",
     description:
-      "Join Games with magic Worlds and play games for free. Donate to charity and help people in need.",
+      "Join Magic Worlds and enjoy immersive games for free while being part of something meaningful.",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const featuresData: Feature[] = [
     icon: "/images/icon/play.png",
     title: "Play Games",
     description:
-      "Play games and earn rewards. Use rewards to donate to charity and help people in need.",
+      "Step into the Worlds to play, have fun, and explore endless possibilities. ",
   },
   {
     id: 4,

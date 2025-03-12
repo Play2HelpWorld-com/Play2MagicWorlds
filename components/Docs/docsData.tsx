@@ -76,11 +76,10 @@ export const docsData: Record<string, DocSection> = {
             </h3>
             <ul className="space-y-1">
               <li>OS: Windows 10/11, macOS 11+, Linux</li>
-              <li>CPU: Intel i5 / AMD Ryzen 5 or better</li>
+              <li>CPU: Intel i3 / AMD Ryzen 3 or better</li>
               <li>RAM: 8GB minimum, 16GB recommended</li>
-              <li>GPU: GTX 1060 / RX 580 or better</li>
-              <li>Storage: 40GB available space</li>
-              <li>Internet: Broadband connection</li>
+              <li>GPU: GTX 1030 / RX 580 or better</li>
+              <li>Storage: 15GB available space</li>
               <li>Also available on Android and iOS devices</li>
             </ul>
           </div>
@@ -96,16 +95,16 @@ export const docsData: Record<string, DocSection> = {
               </li>
               <li>
                 <span className="font-semibold text-white">Deluxe:</span> +
-                Exclusive cosmetics & spaceship skins
+                Exclusive cosmetics & skins (coming soon)
               </li>
               <li>
                 <span className="font-semibold text-white">Collector's:</span> +
-                Art book, soundtrack & season pass
+                Art book, soundtrack & season pass (coming soon)
               </li>
-              <li>
+              {/* <li>
                 <span className="font-semibold text-white">Premium Pass:</span>{" "}
-                + $9.99/month for exclusive content
-              </li>
+                + $9.99/month for exclusive content (coming soon)
+              </li> */}
             </ul>
           </div>
         </div>
@@ -1565,48 +1564,6 @@ export const docsData: Record<string, DocSection> = {
               <strong className="text-blue-300">LinkedIn:</strong>
               <a
                 href="https://www.linkedin.com/company/magic-worlds"
-                className="text-purple-300 hover:text-purple-200 hover:underline"
-              >
-                Magic Worlds
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-blue-400"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-              <strong className="text-blue-300">Discord:</strong>
-              <a
-                href="https://discord.com/invite/NcNSaTVNdn"
-                className="text-purple-300 hover:text-purple-200 hover:underline"
-              >
-                Magic Worlds
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-blue-400"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-              <strong className="text-blue-300">Twitch:</strong>
-              <a
-                href="https://www.twitch.tv/magicworldsonline"
                 className="text-purple-300 hover:text-purple-200 hover:underline"
               >
                 Magic Worlds

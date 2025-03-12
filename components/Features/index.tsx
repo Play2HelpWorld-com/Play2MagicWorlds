@@ -351,9 +351,9 @@ const Feature = () => {
           >
             <SectionHeader
               headerInfo={{
-                title: "LEVEL UP YOUR REWARDS",
+                title: "LEVEL UP IN MAGIC WORLDS!",
                 subtitle: "Epic Gaming Experience",
-                description: `Enter a world where gaming meets rewards. Our platform lets you play immersive games to earn valuable coupons convertible to real money. Choose to withdraw your earnings or make a difference by donating to charitable causes — gaming with purpose has never been more thrilling.`,
+                description: `Explore, build, and create in Magic Worlds—where gaming goes beyond fun! As the world evolves, exciting opportunities may arise, making your journey even more rewarding. Stay engaged and explore the possibilities!`,
               }}
             />
           </motion.div>
@@ -492,10 +492,10 @@ const GameFeatureCard = ({ feature, index, inView }) => {
       whileHover="hover"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="relative z-10 overflow-hidden rounded-xl border border-gray-700 bg-black bg-opacity-40 backdrop-blur-sm dark:border-gray-700"
+      className="relative z-10 overflow-hidden rounded-xl border border-gray-700 bg-black bg-opacity-40 backdrop-blur-sm dark:border-gray-700 "
     >
       {/* Glass morphism effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-700/20 to-transparent opacity-5" />
 
       {/* Animated border effect */}
       <motion.div
@@ -513,7 +513,7 @@ const GameFeatureCard = ({ feature, index, inView }) => {
         className="pointer-events-none absolute inset-0 rounded-xl"
         style={{
           padding: "1px",
-          background: `linear-gradient(90deg, transparent 0%, rgba(124, 58, 237, 0.5) 50%, transparent 100%)`,
+          background: `linear-gradient(90deg, transparent 0%, rgba(14, 58, 217, 0.1) 50%, transparent 100%)`,
           maskImage:
             "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           maskComposite: "exclude",
