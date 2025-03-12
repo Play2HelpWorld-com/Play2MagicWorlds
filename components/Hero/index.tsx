@@ -191,7 +191,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-left"
+            className="items-center text-center"
           >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -220,18 +220,18 @@ const Hero = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300"
+              className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-300"
             >
-              Play captivating games in magical worlds to earn valuable coupons.
-              Convert your rewards into real money that you can withdraw or
-              donate to charity — gaming with purpose.
+              Magic Worlds – Love, Laugh, Learn, Lucrative. Welcome to Magic
+              Worlds, a free, family-friendly, and open-source universe where
+              you shape your adventures.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
-              className="mt-10 flex flex-wrap gap-4"
+              className="mt-10 flex flex-wrap items-center justify-center gap-4"
             >
               <ClaimButton />
 
@@ -248,7 +248,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="mt-8 flex items-center space-x-2 text-gray-400"
+              className="mt-8 hidden items-center justify-center space-x-2 text-gray-400 sm:flex"
             >
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
@@ -266,7 +266,7 @@ const Hero = () => {
                   </div>
                 ))}
               </div>
-              <span>10K+ players have joined today</span>
+              <span>100+ players have joined today</span>
             </motion.div>
           </motion.div>
 
@@ -514,7 +514,7 @@ const Hero = () => {
         </div>
 
         {/* Floating achievements */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: 100, y: 50 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
@@ -542,10 +542,10 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Stats floating card */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: -100, y: 50 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.8, delay: 1.4 }}
@@ -560,7 +560,7 @@ const Hero = () => {
               </span>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Custom animations */}
