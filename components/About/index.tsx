@@ -130,7 +130,7 @@ const About = () => {
               </span>
             </motion.div>
             <h1 className="mb-6 text-4xl font-extrabold leading-tight text-white md:text-5xl lg:text-6xl">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-500 to-red-500 bg-clip-text text-transparent">
                 Magic Worlds
               </span>
             </h1>
