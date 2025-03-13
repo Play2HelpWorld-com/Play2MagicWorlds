@@ -251,8 +251,9 @@ const Footer = () => {
                 variants={itemVariants}
                 className="text-center leading-relaxed text-gray-300 md:text-left"
               >
-                Magic Worlds – Play games, support charities, and make a real
-                impact! 🎮✨
+                Magic Worlds – Love, Laugh, Learn, Lucrative. Welcome to Magic
+                Worlds, a free, family-friendly, and open-source universe where
+                you shape your adventures.
               </motion.p>
 
               <motion.div variants={itemVariants} className="space-y-2">
